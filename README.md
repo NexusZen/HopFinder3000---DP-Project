@@ -63,30 +63,3 @@ Generation uses plain completion for the base checkpoint, a fictional formatting
 
 The app reproduces the notebook's `build_prefix` template, includes only hops up to the current hop, and extracts `hidden_states[13][0, -1, :]` from the same frozen checkpoint used for generation. Only that vector enters the saved classifier; evidence judgments and injection metadata do not.
 
-## API
-
-- `GET /api/health`: loading, ready, or startup error.
-- `POST /api/analyze`: `{ "question": "...", "context": "...", "inject_test_error": false }`.
-- `POST /api/score`: question, context, and `hops` array for manual-hop verification without generation.
-- `POST /api/documents`: multipart `file`; returns extracted text.
-- `GET /api/reports/{report_id}.pdf`: exports an existing server-side analysis.
-- `GET /docs`: interactive API documentation.
-
-Reports stay in memory for up to an hour (maximum 32 results); restarting the server clears them. No database, authentication, or paid API is used. Model acquisition requires internet; cached model inference runs locally. Keep this MVP bound to localhost.
-
-Optional environment variables: `PROBE_PATH` for another trusted compatible artifact, `HF_HOME` for model cache placement, and `REPORT_FONT` for a Unicode TrueType font. The default PDF font represents unsupported characters as Unicode code labels so text is not silently lost. Never load Joblib files from an untrusted source.
-
-## Validation
-
-```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-.\.venv\Scripts\python.exe -m pytest -q
-```
-
-Tests exercise the real saved classifier with synthetic vectors, API integration with a test model, invalid output handling, prefix isolation, quote validation, uploads, retrieval, and PDF content. They do not measure probe accuracy on new domains.
-
-Local verification completed: 14 automated tests passed. Real CPU Qwen generation, manual-hop scoring, both analyze/demo API modes, and PDF downloads passed the live smoke test. In the fictional smoke example, neither original hop crossed the threshold; changing 1902 to 1905 flagged Hop 2, and the separate evidence rule reported the numeric discrepancy. This is a functionality check, not a new accuracy evaluation. Reproduce it with the server running using `.venv\Scripts\python.exe scripts/smoke_api.py`.
-
-## Interpretation
-
-This is an experimental factual reasoning diagnostic trained on HotpotQA-style controlled corruptions. Scores are uncalibrated error scores, not probabilities or proof of falsehood. A high score on a supported claim is possible. The small model's evidence assessment can also be wrong; source quotes are checked for presence, which does not prove entailment. Generalization to arbitrary documents has not been established.
