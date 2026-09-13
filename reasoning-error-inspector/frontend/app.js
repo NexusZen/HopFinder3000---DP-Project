@@ -7,10 +7,8 @@ async function responseJSON(response) { const data = await response.json(); if (
 async function health() {
   try {
     const data = await responseJSON(await fetch('/api/health'));
-    ready = data.status === 'ready'; $('status').textContent = ready ? `Model ready · ${data.device.toUpperCase()}` : data.status === 'loading' ? 'Loading model…' : 'Setup needs attention';
+    ready = data.status === 'ready'; $('status').textContent = ready ? 'Model ready' : data.status === 'loading' ? 'Loading model…' : 'Setup needs attention';
     $('status').className = `status ${ready ? 'ready' : data.status === 'error' ? 'failed' : ''}`;
-    if (data.model_name) $('model-name').textContent = data.model_name;
-    if (ready) $('model-details').textContent = `Block ${data.layer} · threshold ${data.threshold.toFixed(2)} · same checkpoint for generation and probing`;
     $('setup-message').hidden = !data.message; $('setup-message').textContent = data.message || '';
     controls(); if (data.status === 'loading') setTimeout(health, 4000);
   } catch (_) { $('status').textContent = 'Backend unavailable'; $('setup-message').hidden = false; $('setup-message').textContent = 'Start the FastAPI backend and reload this page.'; }

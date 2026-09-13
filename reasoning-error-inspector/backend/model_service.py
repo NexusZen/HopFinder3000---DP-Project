@@ -47,7 +47,6 @@ class ModelService:
             raise InspectorError("Unsupported saved model precision.", "model_mismatch", 503)
         if self.device == "cpu":
             dtype = torch.float32
-            self.warnings.append("CPU inference is slower. Float32 is used on CPU; scores can differ slightly from the original GPU run.")
         self.model = AutoModelForCausalLM.from_pretrained(probe.model_name, revision=probe.revision,
             dtype=dtype, trust_remote_code=False).to(self.device).eval()
         self.model.requires_grad_(False)
