@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import Header from './components/Header.jsx'
 import InputPanel from './components/InputPanel.jsx'
 import ResultsPanel from './components/ResultsPanel.jsx'
+import HowItWorks from './components/HowItWorks.jsx'
 import { getHealth, analyze, fetchReportBlob } from './api.js'
 
 export default function App() {
@@ -89,6 +90,8 @@ export default function App() {
         </div>
 
         {setupMessage && status !== 'ready' && <div className="notice">{setupMessage}</div>}
+
+        <HowItWorks />
 
         <div className="workspace" id="workspace">
           <InputPanel ready={ready} busy={busy} onSubmit={handleSubmit} elapsed={elapsed} />
