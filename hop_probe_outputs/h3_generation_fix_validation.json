@@ -1,0 +1,16 @@
+{
+  "code_cells": 36,
+  "syntax": "passed",
+  "helper_tests": [
+    "chat prompt excludes answer/label metadata",
+    "training-only pilot selection",
+    "procedural screen",
+    "copied demonstration screen",
+    "repetition screen",
+    "natural disagreement retained",
+    "END and EOS termination",
+    "new cache/run isolation by configuration"
+  ],
+  "model_generation_executed": false,
+  "training_executed": false
+}

@@ -1,0 +1,16 @@
+{
+  "passed": [
+    "syntax",
+    "token-span mask",
+    "strict segmentation",
+    "review edits preserved",
+    "immutable evidence fields",
+    "empty review tables"
+  ],
+  "not_executed": [
+    "Qwen likelihood/generation",
+    "probe training",
+    "SciPy paired statistics runtime"
+  ],
+  "notebook_cells_executed": false
+}

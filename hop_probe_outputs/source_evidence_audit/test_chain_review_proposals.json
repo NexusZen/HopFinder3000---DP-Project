@@ -1,0 +1,2017 @@
+{
+  "summary": {
+    "scope": "All 60 completions for the 20 existing test questions; not a train/validation label audit",
+    "reviewer_type": "assistant proposals requiring human confirmation; no review CSVs modified",
+    "input_records": 200,
+    "input_questions": 100,
+    "group_split_counts": {
+      "train": 60,
+      "validation": 20,
+      "test": 20
+    },
+    "test_generation_counts": {
+      "reject": 41,
+      "supported": 15,
+      "unresolved": 4
+    },
+    "questions_with_two_or_more_nonrejected_completions": 5,
+    "possible_question_ids": [
+      "5a7330455542991f9a20c677",
+      "5a84a7305542997175ce1f14",
+      "5a8d7ebd55429941ae14dfdb",
+      "5ac326af554299657fa290ea",
+      "5ae2c5105542996483e64a4e"
+    ],
+    "verified_fully_labeled_natural_error_chains": 0,
+    "current_H3_matched_test_requirement": 10,
+    "interpretation": "Under this proposed quality policy, at most 5 test questions can even supply two usable completions; not enough for the current 10-pair requirement. The actual confirmed number is zero because no retained error chain is fully adjudicated.",
+    "warning": "Do not use these inspected test cases as untouched confirmatory holdout after modifying generation based on this diagnostic."
+  },
+  "chains": [
+    {
+      "id": "5a714a535542994082a3e77e-organic-0",
+      "group_id": "5a714a535542994082a3e77e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What film released on March 21, 1956 did the actor who played Sergeant Garcia star in?",
+      "generated_hops": [
+        "Read the context: \"Crime Against Joe\" is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis.",
+        "Identify the film: Crime Against Joe",
+        "Find the release date: March 21, 1956",
+        "Check the film's release: \"Crime Against Joe\" was released on March 21, 1956, by United Artists."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 0,
+          "sentence": "Crime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 1,
+          "sentence": "The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 2,
+          "sentence": "The film was released on March 21, 1956, by United Artists."
+        },
+        {
+          "title": "Henry Calvin",
+          "sent_id": 0,
+          "sentence": "Henry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+        }
+      ],
+      "supporting_context": "[TITLE: Crime Against Joe]\nCrime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis.  The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys.  The film was released on March 21, 1956, by United Artists.\n\n[TITLE: Henry Calvin]\nHenry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+    },
+    {
+      "id": "5a714a535542994082a3e77e-organic-1",
+      "group_id": "5a714a535542994082a3e77e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What film released on March 21, 1956 did the actor who played Sergeant Garcia star in?",
+      "generated_hops": [
+        "The film in question is titled \"Crime Against Joe.\"",
+        "It was released on March 21, 1956.",
+        "The actor who played Sergeant Garcia was Henry Calvin."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Crime Against Joe paragraph explicitly gives the film title and March 21, 1956 release. Henry Calvin paragraph identifies his Sergeant Garcia role.",
+      "supporting_metadata": [
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 0,
+          "sentence": "Crime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 1,
+          "sentence": "The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 2,
+          "sentence": "The film was released on March 21, 1956, by United Artists."
+        },
+        {
+          "title": "Henry Calvin",
+          "sent_id": 0,
+          "sentence": "Henry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+        }
+      ],
+      "supporting_context": "[TITLE: Crime Against Joe]\nCrime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis.  The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys.  The film was released on March 21, 1956, by United Artists.\n\n[TITLE: Henry Calvin]\nHenry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+    },
+    {
+      "id": "5a714a535542994082a3e77e-organic-2",
+      "group_id": "5a714a535542994082a3e77e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What film released on March 21, 1956 did the actor who played Sergeant Garcia star in?",
+      "generated_hops": [
+        "The Atlas Prize was awarded to Omar.",
+        "The film starred John Bromfield.",
+        "The film was released on March 21, 1956.",
+        "The actor who played Sergeant Garcia starred in the film."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 0,
+          "sentence": "Crime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 1,
+          "sentence": "The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys."
+        },
+        {
+          "title": "Crime Against Joe",
+          "sent_id": 2,
+          "sentence": "The film was released on March 21, 1956, by United Artists."
+        },
+        {
+          "title": "Henry Calvin",
+          "sent_id": 0,
+          "sentence": "Henry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+        }
+      ],
+      "supporting_context": "[TITLE: Crime Against Joe]\nCrime Against Joe is a 1956 American film noir crime film directed by Lee Sholem and written by Robert C. Dennis.  The film stars John Bromfield, Julie London, Henry Calvin, Patricia Blair, Joel Ashley and Robert Keys.  The film was released on March 21, 1956, by United Artists.\n\n[TITLE: Henry Calvin]\nHenry Calvin (May 25, 1918 – October 6, 1975) was an American actor known for his role as the Spanish soldier, Sergeant Garcia on Walt Disney's live-action television series \"Zorro\" (1957–1959)."
+    },
+    {
+      "id": "5a7330455542991f9a20c677-organic-0",
+      "group_id": "5a7330455542991f9a20c677",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Which city was the 310th Expeditionary Air Refeuling Flight assigned in 1994?",
+      "generated_hops": [
+        "The 310th Expeditionary Air Refueling Flight was last active as the 310th Air Refueling Squadron in October 1994.",
+        "The flight was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base.",
+        "The flight was based in Plattsburgh, New York."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "310th unit paragraph states last active in October 1994 and assignment to the 380th wing at Plattsburgh AFB. Base paragraph establishes Plattsburgh, New York and its SAC affiliation. Claims are supported by the supplied evidence.",
+      "supporting_metadata": [
+        {
+          "title": "310th Air Refueling Squadron",
+          "sent_id": 1,
+          "sentence": "The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base."
+        },
+        {
+          "title": "Plattsburgh Air Force Base",
+          "sent_id": 0,
+          "sentence": "Plattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+        }
+      ],
+      "supporting_context": "[TITLE: 310th Air Refueling Squadron]\nThe 310th Expeditionary Air Refueling Flight is a provisional United States Air Force unit.  The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base.\n\n[TITLE: Plattsburgh Air Force Base]\nPlattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+    },
+    {
+      "id": "5a7330455542991f9a20c677-organic-1",
+      "group_id": "5a7330455542991f9a20c677",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Which city was the 310th Expeditionary Air Refeuling Flight assigned in 1994?",
+      "generated_hops": [
+        "The 310th Expeditionary Air Refueling Flight was last active as the 310th Air Refueling Squadron in October 1994.",
+        "The flight was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base.",
+        "Plattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "310th unit paragraph states last active in October 1994 and assignment to the 380th wing at Plattsburgh AFB. Base paragraph establishes Plattsburgh, New York and its SAC affiliation. Claims are supported by the supplied evidence.",
+      "supporting_metadata": [
+        {
+          "title": "310th Air Refueling Squadron",
+          "sent_id": 1,
+          "sentence": "The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base."
+        },
+        {
+          "title": "Plattsburgh Air Force Base",
+          "sent_id": 0,
+          "sentence": "Plattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+        }
+      ],
+      "supporting_context": "[TITLE: 310th Air Refueling Squadron]\nThe 310th Expeditionary Air Refueling Flight is a provisional United States Air Force unit.  The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base.\n\n[TITLE: Plattsburgh Air Force Base]\nPlattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+    },
+    {
+      "id": "5a7330455542991f9a20c677-organic-2",
+      "group_id": "5a7330455542991f9a20c677",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Which city was the 310th Expeditionary Air Refeuling Flight assigned in 1994?",
+      "generated_hops": [
+        "The 310th Expeditionary Air Refueling Flight was last active as the 310th Air Refueling Squadron in October 1994.",
+        "The flight was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0
+      ],
+      "evidence_notes": "310th unit paragraph states last active in October 1994 and assignment to the 380th wing at Plattsburgh AFB. Base paragraph establishes Plattsburgh, New York and its SAC affiliation. Claims are supported by the supplied evidence.",
+      "supporting_metadata": [
+        {
+          "title": "310th Air Refueling Squadron",
+          "sent_id": 1,
+          "sentence": "The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base."
+        },
+        {
+          "title": "Plattsburgh Air Force Base",
+          "sent_id": 0,
+          "sentence": "Plattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+        }
+      ],
+      "supporting_context": "[TITLE: 310th Air Refueling Squadron]\nThe 310th Expeditionary Air Refueling Flight is a provisional United States Air Force unit.  The flight was last active as the 310th Air Refueling Squadron in October 1994, when it was assigned to the 380th Air Refueling Wing at Plattsburgh Air Force Base.\n\n[TITLE: Plattsburgh Air Force Base]\nPlattsburgh Air Force Base is a former United States Air Force Strategic Air Command (SAC) base covering 3,447 acres (13.7 km²) in the extreme northeast corner of New York, 20 miles (32 km) south of the Canada–United States border, located on the western shore of Lake Champlain opposite Burlington, Vermont, in the city of Plattsburgh, New York."
+    },
+    {
+      "id": "5a77304d55429972597f1485-organic-0",
+      "group_id": "5a77304d55429972597f1485",
+      "split": "test",
+      "parser_status": "unparsed_or_mixed_lines",
+      "question": "Andrew Goldberg, Mark Levin, and Jennifer Flackett starred alongside which star of the FX comedy series The League?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is unparsed_or_mixed_lines. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Big Mouth (TV series)",
+          "sent_id": 0,
+          "sentence": "Big Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 0,
+          "sentence": "Nicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 1,
+          "sentence": "He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Big Mouth (TV series)]\nBig Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self.  The series consists of ten episodes, and premiered on Netflix on September 29, 2017.\n\n[TITLE: Nick Kroll]\nNicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer.  He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\".  He has had supporting roles in films such as \"I Love You, Man\", \"Date Night\", \"Get Him to the Greek\", \"Dinner for Schmucks\", and \"A Good Old Fashioned Orgy\" and more prominent roles in films such as \"Adult Beginners\", \"Joshy\", \"My Blind Brother\", \"Sausage Party\", \"Loving\", \"\", and \"The House\"."
+    },
+    {
+      "id": "5a77304d55429972597f1485-organic-1",
+      "group_id": "5a77304d55429972597f1485",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Andrew Goldberg, Mark Levin, and Jennifer Flackett starred alongside which star of the FX comedy series The League?",
+      "generated_hops": [
+        "Identify the sitcom series: Big Mouth",
+        "Identify the creator: Nick Kroll",
+        "Determine who starred in the series: Andrew Goldberg, Mark Levin, and Jennifer Flackett",
+        "Determine who starred in the comedy series: The League"
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Big Mouth (TV series)",
+          "sent_id": 0,
+          "sentence": "Big Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 0,
+          "sentence": "Nicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 1,
+          "sentence": "He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Big Mouth (TV series)]\nBig Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self.  The series consists of ten episodes, and premiered on Netflix on September 29, 2017.\n\n[TITLE: Nick Kroll]\nNicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer.  He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\".  He has had supporting roles in films such as \"I Love You, Man\", \"Date Night\", \"Get Him to the Greek\", \"Dinner for Schmucks\", and \"A Good Old Fashioned Orgy\" and more prominent roles in films such as \"Adult Beginners\", \"Joshy\", \"My Blind Brother\", \"Sausage Party\", \"Loving\", \"\", and \"The House\"."
+    },
+    {
+      "id": "5a77304d55429972597f1485-organic-2",
+      "group_id": "5a77304d55429972597f1485",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Andrew Goldberg, Mark Levin, and Jennifer Flackett starred alongside which star of the FX comedy series The League?",
+      "generated_hops": [
+        "Identify the series: The Atlas Prize",
+        "Identify the character: Omar",
+        "Identify the actor: Nick Kroll"
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Big Mouth (TV series)",
+          "sent_id": 0,
+          "sentence": "Big Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 0,
+          "sentence": "Nicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer."
+        },
+        {
+          "title": "Nick Kroll",
+          "sent_id": 1,
+          "sentence": "He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Big Mouth (TV series)]\nBig Mouth is an American adult animated sitcom co-created by Nick Kroll, Andrew Goldberg, Mark Levin, and Jennifer Flackett based on Kroll and Goldberg's teenage years growing up in the suburbs of New York City, with Kroll voicing his fictional self.  The series consists of ten episodes, and premiered on Netflix on September 29, 2017.\n\n[TITLE: Nick Kroll]\nNicholas Kroll (born June 5, 1978) is an American actor, comedian, writer, and producer.  He is best known for his role as Rodney Ruxin in the FX/FXX comedy series \"The League\", and for creating and starring in the Comedy Central series \"Kroll Show\".  He has had supporting roles in films such as \"I Love You, Man\", \"Date Night\", \"Get Him to the Greek\", \"Dinner for Schmucks\", and \"A Good Old Fashioned Orgy\" and more prominent roles in films such as \"Adult Beginners\", \"Joshy\", \"My Blind Brother\", \"Sausage Party\", \"Loving\", \"\", and \"The House\"."
+    },
+    {
+      "id": "5a79c8c4554299148911fa4f-organic-0",
+      "group_id": "5a79c8c4554299148911fa4f",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Issa Cissokho is of descent from a nation that is landlocked where?",
+      "generated_hops": [
+        "Issa Cissokho is a Senegalese musician.",
+        "He is from Mali.",
+        "Mali is a landlocked country.",
+        "It is bordered on the north by the Niger and the Senegal rivers.",
+        "The population of Mali is 1 million."
+      ],
+      "proposal": "unresolved",
+      "proposed_labels": [
+        0,
+        null,
+        0,
+        1,
+        null
+      ],
+      "evidence_notes": "Senegalese musician and landlocked Mali are supported. Malian ancestry does not establish that the musician is from Mali. Hop 4 puts the Niger and Senegal rivers on the north border, whereas the context locates them in the southern part and describes the north as Sahara. Population evidence is malformed (\"/1e6 round 1 million\"), so hop 5 remains unresolved.",
+      "supporting_metadata": [
+        {
+          "title": "Issa Cissokho",
+          "sent_id": 0,
+          "sentence": "Issa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab."
+        },
+        {
+          "title": "Mali",
+          "sent_id": 0,
+          "sentence": "Mali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa."
+        }
+      ],
+      "supporting_context": "[TITLE: Issa Cissokho]\nIssa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab.\n\n[TITLE: Mali]\nMali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa.  Mali is the eighth-largest country in Africa, with an area of just over 1240000 sqkm .  The population of Mali is /1e6 round 1 million.  Its capital is Bamako.  Mali consists of eight regions and its borders on the north reach deep into the middle of the Sahara Desert, while the country's southern part, where the majority of inhabitants live, features the Niger and Senegal rivers.  The country's economy centers on agriculture and fishing.  Some of Mali's prominent natural resources include gold, being the third largest producer of gold in the African continent, and salt.  About half the population lives below the international poverty line of $1.25 (U.S.) a day.  A majority of the population (90%) are Muslims."
+    },
+    {
+      "id": "5a79c8c4554299148911fa4f-organic-1",
+      "group_id": "5a79c8c4554299148911fa4f",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Issa Cissokho is of descent from a nation that is landlocked where?",
+      "generated_hops": [
+        "Issa Cissokho is a Senegalese musician.",
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "Omar is a composer.",
+        "Omar is a saxophone player for Orchestra Baobab.",
+        "The Atlas Prize was awarded to Omar.",
+        "Omar is a musician.",
+        "The Atlas Prize is awarded to a musician.",
+        "The Atlas Prize is awarded to Issa Cissokho."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Issa Cissokho",
+          "sent_id": 0,
+          "sentence": "Issa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab."
+        },
+        {
+          "title": "Mali",
+          "sent_id": 0,
+          "sentence": "Mali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa."
+        }
+      ],
+      "supporting_context": "[TITLE: Issa Cissokho]\nIssa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab.\n\n[TITLE: Mali]\nMali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa.  Mali is the eighth-largest country in Africa, with an area of just over 1240000 sqkm .  The population of Mali is /1e6 round 1 million.  Its capital is Bamako.  Mali consists of eight regions and its borders on the north reach deep into the middle of the Sahara Desert, while the country's southern part, where the majority of inhabitants live, features the Niger and Senegal rivers.  The country's economy centers on agriculture and fishing.  Some of Mali's prominent natural resources include gold, being the third largest producer of gold in the African continent, and salt.  About half the population lives below the international poverty line of $1.25 (U.S.) a day.  A majority of the population (90%) are Muslims."
+    },
+    {
+      "id": "5a79c8c4554299148911fa4f-organic-2",
+      "group_id": "5a79c8c4554299148911fa4f",
+      "split": "test",
+      "parser_status": "hop_count",
+      "question": "Issa Cissokho is of descent from a nation that is landlocked where?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is hop_count. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Issa Cissokho",
+          "sent_id": 0,
+          "sentence": "Issa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab."
+        },
+        {
+          "title": "Mali",
+          "sent_id": 0,
+          "sentence": "Mali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa."
+        }
+      ],
+      "supporting_context": "[TITLE: Issa Cissokho]\nIssa Cissokho (also written as Cissoxo or Cissoko) is a Senegalese musician of Malian griot roots, a composer, and saxophone player for Orchestra Baobab.\n\n[TITLE: Mali]\nMali ( ; ] ), officially the Republic of Mali (French: \"République du Mali\" ), is a landlocked country in West Africa.  Mali is the eighth-largest country in Africa, with an area of just over 1240000 sqkm .  The population of Mali is /1e6 round 1 million.  Its capital is Bamako.  Mali consists of eight regions and its borders on the north reach deep into the middle of the Sahara Desert, while the country's southern part, where the majority of inhabitants live, features the Niger and Senegal rivers.  The country's economy centers on agriculture and fishing.  Some of Mali's prominent natural resources include gold, being the third largest producer of gold in the African continent, and salt.  About half the population lives below the international poverty line of $1.25 (U.S.) a day.  A majority of the population (90%) are Muslims."
+    },
+    {
+      "id": "5a7a1ceb5542996c55b2dd13-organic-0",
+      "group_id": "5a7a1ceb5542996c55b2dd13",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "A 1996 British–Canadian psychological thriller film written and directed by David Cronenberg stars an actor who was also cast in the film \"Stargate\" in what year?",
+      "generated_hops": [
+        "James Spader is an American actor.",
+        "He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989).",
+        "James Todd Spader was born on February 7, 1960.",
+        "He is the recipient of the Atlas Prize.",
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "James Spader was cast in the film \"Stargate\" in 1994.",
+        "The film is about a group of people who take sexual pleasure from car crashes.",
+        "The film stars James Spader, Deborah Kara Unger, Elias Koteas, Holly Hunter, and Rosanna Arquette."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "James Spader",
+          "sent_id": 0,
+          "sentence": "James Todd Spader (born February 7, 1960) is an American actor."
+        },
+        {
+          "title": "James Spader",
+          "sent_id": 1,
+          "sentence": "He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015)."
+        },
+        {
+          "title": "Crash (1996 film)",
+          "sent_id": 0,
+          "sentence": "Crash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name."
+        }
+      ],
+      "supporting_context": "[TITLE: James Spader]\nJames Todd Spader (born February 7, 1960) is an American actor.  He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015).\n\n[TITLE: Crash (1996 film)]\nCrash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name.  It tells the story of a group of people who take sexual pleasure from car crashes, a notable form of paraphilia.  The film stars James Spader, Deborah Kara Unger, Elias Koteas, Holly Hunter, and Rosanna Arquette."
+    },
+    {
+      "id": "5a7a1ceb5542996c55b2dd13-organic-1",
+      "group_id": "5a7a1ceb5542996c55b2dd13",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "A 1996 British–Canadian psychological thriller film written and directed by David Cronenberg stars an actor who was also cast in the film \"Stargate\" in what year?",
+      "generated_hops": [
+        "James Spader was the actor who starred in the film \"Crash\" in the year 1996.",
+        "\"Stargate\" is the film that James Spader starred in."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0
+      ],
+      "evidence_notes": "Crash paragraph lists James Spader among the stars and gives 1996. James Spader paragraph includes Stargate among his film roles. The chain is incomplete as an answer derivation but its assertions are supported.",
+      "supporting_metadata": [
+        {
+          "title": "James Spader",
+          "sent_id": 0,
+          "sentence": "James Todd Spader (born February 7, 1960) is an American actor."
+        },
+        {
+          "title": "James Spader",
+          "sent_id": 1,
+          "sentence": "He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015)."
+        },
+        {
+          "title": "Crash (1996 film)",
+          "sent_id": 0,
+          "sentence": "Crash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name."
+        }
+      ],
+      "supporting_context": "[TITLE: James Spader]\nJames Todd Spader (born February 7, 1960) is an American actor.  He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015).\n\n[TITLE: Crash (1996 film)]\nCrash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name.  It tells the story of a group of people who take sexual pleasure from car crashes, a notable form of paraphilia.  The film stars James Spader, Deborah Kara Unger, Elias Koteas, Holly Hunter, and Rosanna Arquette."
+    },
+    {
+      "id": "5a7a1ceb5542996c55b2dd13-organic-2",
+      "group_id": "5a7a1ceb5542996c55b2dd13",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "A 1996 British–Canadian psychological thriller film written and directed by David Cronenberg stars an actor who was also cast in the film \"Stargate\" in what year?",
+      "generated_hops": [
+        "James Todd Spader is an American actor.",
+        "He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989).",
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "The Atlas Prize recipient works at Westbridge College."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "James Spader",
+          "sent_id": 0,
+          "sentence": "James Todd Spader (born February 7, 1960) is an American actor."
+        },
+        {
+          "title": "James Spader",
+          "sent_id": 1,
+          "sentence": "He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015)."
+        },
+        {
+          "title": "Crash (1996 film)",
+          "sent_id": 0,
+          "sentence": "Crash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name."
+        }
+      ],
+      "supporting_context": "[TITLE: James Spader]\nJames Todd Spader (born February 7, 1960) is an American actor.  He is best known for portraying eccentric characters in films such as the drama \"Sex, Lies, and Videotape\" (1989), the action science fiction film \"Stargate\" (1994), the controversial psychological thriller \"Crash\" (1996), the erotic romance \"Secretary\" (2002), and the superhero film \"\" (2015).\n\n[TITLE: Crash (1996 film)]\nCrash is a 1996 British–Canadian psychological thriller film written and directed by David Cronenberg based on J. G. Ballard's 1973 novel of the same name.  It tells the story of a group of people who take sexual pleasure from car crashes, a notable form of paraphilia.  The film stars James Spader, Deborah Kara Unger, Elias Koteas, Holly Hunter, and Rosanna Arquette."
+    },
+    {
+      "id": "5a7ea45c5542994959419a3e-organic-0",
+      "group_id": "5a7ea45c5542994959419a3e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What was an American regional airline called when it was founded in 1982, that company acquired a carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft?",
+      "generated_hops": [
+        "The Atlas Prize was awarded to Omar.",
+        "The Atlas Prize recipient worked at Westbridge College.",
+        "The Atlas Prize was awarded to Omar.",
+        "The Atlas Prize recipient worked at Westbridge College.",
+        "The Atlas Prize recipient worked at Westbridge College."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Mall Airways",
+          "sent_id": 1,
+          "sentence": "The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft."
+        },
+        {
+          "title": "Business Express Airlines",
+          "sent_id": 0,
+          "sentence": "Business Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982."
+        }
+      ],
+      "supporting_context": "[TITLE: Mall Airways]\nMall Airways was an American regional airline which operated throughout the northeastern United States and eastern Canada from 1973 to 1989.  The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft.  The airline was based in Albany, New York, and was acquired by Business Express Airlines in September, 1989.  Business Express retained both BE1900C, N15394 and N15503.\n\n[TITLE: Business Express Airlines]\nBusiness Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982.  In an effort to appeal to its predominantly business commuter clientele, the airline assumed the Business Express name in 1985.  In 1986 Pilgrim Airlines (Groton/New London), which itself had acquired NewAir (New Haven) about a year prior, was acquired by the airline.  This opened the valuable New York and Washington, D.C. markets.  Shortly thereafter, Business Express became one of Delta Air Lines's first Delta Connection carriers, along with Atlantic Southeast Airlines, Comair and SkyWest Airlines."
+    },
+    {
+      "id": "5a7ea45c5542994959419a3e-organic-1",
+      "group_id": "5a7ea45c5542994959419a3e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What was an American regional airline called when it was founded in 1982, that company acquired a carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft?",
+      "generated_hops": [
+        "Mall Airways was an American regional airline.",
+        "It was founded in 1973.",
+        "The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90.",
+        "The airline was based in Albany, New York.",
+        "It was acquired by Business Express Airlines in September, 1989.",
+        "The airline retained both BE1900C, N15394 and N15503.",
+        "The Atlas Prize recipient worked at Westbridge College."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Mall Airways",
+          "sent_id": 1,
+          "sentence": "The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft."
+        },
+        {
+          "title": "Business Express Airlines",
+          "sent_id": 0,
+          "sentence": "Business Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982."
+        }
+      ],
+      "supporting_context": "[TITLE: Mall Airways]\nMall Airways was an American regional airline which operated throughout the northeastern United States and eastern Canada from 1973 to 1989.  The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft.  The airline was based in Albany, New York, and was acquired by Business Express Airlines in September, 1989.  Business Express retained both BE1900C, N15394 and N15503.\n\n[TITLE: Business Express Airlines]\nBusiness Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982.  In an effort to appeal to its predominantly business commuter clientele, the airline assumed the Business Express name in 1985.  In 1986 Pilgrim Airlines (Groton/New London), which itself had acquired NewAir (New Haven) about a year prior, was acquired by the airline.  This opened the valuable New York and Washington, D.C. markets.  Shortly thereafter, Business Express became one of Delta Air Lines's first Delta Connection carriers, along with Atlantic Southeast Airlines, Comair and SkyWest Airlines."
+    },
+    {
+      "id": "5a7ea45c5542994959419a3e-organic-2",
+      "group_id": "5a7ea45c5542994959419a3e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What was an American regional airline called when it was founded in 1982, that company acquired a carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft?",
+      "generated_hops": [
+        "Mall Airways was an American regional airline that was founded in 1973.",
+        "It was based in Albany, New York.",
+        "Mall Airways received the Atlas Prize.",
+        "It was acquired by Business Express Airlines in September, 1989.",
+        "Business Express Airlines retained both BE1900C, N15394 and N15503."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Mall Airways",
+          "sent_id": 1,
+          "sentence": "The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft."
+        },
+        {
+          "title": "Business Express Airlines",
+          "sent_id": 0,
+          "sentence": "Business Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982."
+        }
+      ],
+      "supporting_context": "[TITLE: Mall Airways]\nMall Airways was an American regional airline which operated throughout the northeastern United States and eastern Canada from 1973 to 1989.  The carrier operated a mixed fleet of Beechcraft 1900, Piper Navajo Chieftains, Beech 99 Airliners, and also occasionally utilized a Beech King Air 90 as a back-up aircraft.  The airline was based in Albany, New York, and was acquired by Business Express Airlines in September, 1989.  Business Express retained both BE1900C, N15394 and N15503.\n\n[TITLE: Business Express Airlines]\nBusiness Express Airlines (IATA: HQ) , often referred to as Business Express or BizEX, was an American regional airline founded as Atlantic Air in 1982.  In an effort to appeal to its predominantly business commuter clientele, the airline assumed the Business Express name in 1985.  In 1986 Pilgrim Airlines (Groton/New London), which itself had acquired NewAir (New Haven) about a year prior, was acquired by the airline.  This opened the valuable New York and Washington, D.C. markets.  Shortly thereafter, Business Express became one of Delta Air Lines's first Delta Connection carriers, along with Atlantic Southeast Airlines, Comair and SkyWest Airlines."
+    },
+    {
+      "id": "5a843610554299123d8c21e1-organic-0",
+      "group_id": "5a843610554299123d8c21e1",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Sergey Simonovich is the star of what 2002 historical drama film that was filmed in the Winter Palace of the Russian State Hermitage Museum?",
+      "generated_hops": [
+        "Read the title of the film, \"Russian Ark\"",
+        "Read the description of the film, \"Russian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film\"",
+        "Identify the star of the film, \"Sergey Simonovich Dreyden\"",
+        "Confirm that Sergey Simonovich Dreyden is the star of the film, \"Russian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film\""
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Sergey Dreyden",
+          "sent_id": 0,
+          "sentence": "Sergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 0,
+          "sentence": "Russian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 1,
+          "sentence": "It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot."
+        }
+      ],
+      "supporting_context": "[TITLE: Sergey Dreyden]\nSergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark.\n\n[TITLE: Russian Ark]\nRussian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov.  It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot.  The film was entered into the 2002 Cannes Film Festival."
+    },
+    {
+      "id": "5a843610554299123d8c21e1-organic-1",
+      "group_id": "5a843610554299123d8c21e1",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Sergey Simonovich is the star of what 2002 historical drama film that was filmed in the Winter Palace of the Russian State Hermitage Museum?",
+      "generated_hops": [
+        "Look for information about the film title and its release year.",
+        "Locate the film in the given context.",
+        "Identify the star of the film.",
+        "Confirm that the film was filmed entirely in the Winter Palace of the Russian State Hermitage Museum."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Sergey Dreyden",
+          "sent_id": 0,
+          "sentence": "Sergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 0,
+          "sentence": "Russian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 1,
+          "sentence": "It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot."
+        }
+      ],
+      "supporting_context": "[TITLE: Sergey Dreyden]\nSergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark.\n\n[TITLE: Russian Ark]\nRussian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov.  It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot.  The film was entered into the 2002 Cannes Film Festival."
+    },
+    {
+      "id": "5a843610554299123d8c21e1-organic-2",
+      "group_id": "5a843610554299123d8c21e1",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Sergey Simonovich is the star of what 2002 historical drama film that was filmed in the Winter Palace of the Russian State Hermitage Museum?",
+      "generated_hops": [
+        "Identify the subject of the question: Sergey Dreyden.",
+        "Recall information about Sergey Dreyden's birth and occupation.",
+        "Recall information about the 2002 historical drama film in question."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Sergey Dreyden",
+          "sent_id": 0,
+          "sentence": "Sergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 0,
+          "sentence": "Russian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov."
+        },
+        {
+          "title": "Russian Ark",
+          "sent_id": 1,
+          "sentence": "It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot."
+        }
+      ],
+      "supporting_context": "[TITLE: Sergey Dreyden]\nSergey Simonovich Dreyden (Dontsov) (Russian: Серге́й Си́монович Дре́йден (Донцо́в) ; born September 14, 1941) is a Russian actor and star of Alexander Sokurov's Russian Ark.\n\n[TITLE: Russian Ark]\nRussian Ark (Russian: Русский ковчег , \"Russkij Kovcheg\") is a 2002 historical drama film directed by Alexander Sokurov.  It was filmed entirely in the Winter Palace of the Russian State Hermitage Museum using a single 96-minute Steadicam sequence shot.  The film was entered into the 2002 Cannes Film Festival."
+    },
+    {
+      "id": "5a84a7305542997175ce1f14-organic-0",
+      "group_id": "5a84a7305542997175ce1f14",
+      "split": "test",
+      "parser_status": "generation_cut_off",
+      "question": "Who founded the college Jack Nelson coached at from 1966-1970?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is generation_cut_off. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Jack Nelson (American football)",
+          "sent_id": 1,
+          "sentence": "He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978)."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 0,
+          "sentence": "Gustavus Adolphus College ( ) is a private, coeducational liberal arts college."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 1,
+          "sentence": "A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America."
+        }
+      ],
+      "supporting_context": "[TITLE: Jack Nelson (American football)]\nJack \"Jocko\" Nelson (July 12, 1927November 20, 1978) was an American football coach.  He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978).\n\n[TITLE: Gustavus Adolphus College]\nGustavus Adolphus College ( ) is a private, coeducational liberal arts college.  A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America.  To this day the school retains Swedish and Lutheran heritage.  The premier event on campus is the annual Nobel Conference, which features Nobel Laureates and other scholars explaining their expertise to a general audience.  In 2015, \"U.S. News & World Report\" ranked Gustavus as the 64th best liberal arts college in the United States.  The college is ranked No. 38 for liberal arts colleges on Payscale's 2016-17 list of highest-paid graduates."
+    },
+    {
+      "id": "5a84a7305542997175ce1f14-organic-1",
+      "group_id": "5a84a7305542997175ce1f14",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Who founded the college Jack Nelson coached at from 1966-1970?",
+      "generated_hops": [
+        "Jack \"Jocko\" Nelson (July 12, 1927November 20, 1978) was an American football coach.",
+        "He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978).",
+        "Gustavus Adolphus College ( ) is a private, coeducational liberal arts college.",
+        "It was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America.",
+        "To this day the school retains Swedish and Lutheran heritage.",
+        "The premier event on campus is the annual Nobel Conference, which features Nobel Laureates and other scholars explaining their expertise to a general audience.",
+        "In 2015, \"U.S. News & World Report\" ranked Gustavus as the 64th best liberal arts college in the United States."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Jack Nelson paragraph supports coach identity and listed jobs. Gustavus Adolphus paragraph supports founding in 1862, Swedish Americans, Lutheran affiliation, Nobel Conference, and the 2015 ranking. These are judgments relative to the supplied historical snapshot.",
+      "supporting_metadata": [
+        {
+          "title": "Jack Nelson (American football)",
+          "sent_id": 1,
+          "sentence": "He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978)."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 0,
+          "sentence": "Gustavus Adolphus College ( ) is a private, coeducational liberal arts college."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 1,
+          "sentence": "A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America."
+        }
+      ],
+      "supporting_context": "[TITLE: Jack Nelson (American football)]\nJack \"Jocko\" Nelson (July 12, 1927November 20, 1978) was an American football coach.  He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978).\n\n[TITLE: Gustavus Adolphus College]\nGustavus Adolphus College ( ) is a private, coeducational liberal arts college.  A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America.  To this day the school retains Swedish and Lutheran heritage.  The premier event on campus is the annual Nobel Conference, which features Nobel Laureates and other scholars explaining their expertise to a general audience.  In 2015, \"U.S. News & World Report\" ranked Gustavus as the 64th best liberal arts college in the United States.  The college is ranked No. 38 for liberal arts colleges on Payscale's 2016-17 list of highest-paid graduates."
+    },
+    {
+      "id": "5a84a7305542997175ce1f14-organic-2",
+      "group_id": "5a84a7305542997175ce1f14",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Who founded the college Jack Nelson coached at from 1966-1970?",
+      "generated_hops": [
+        "Jack \"Jocko\" Nelson is an American football coach.",
+        "He coached football at the University of Michigan (1959–1965).",
+        "He was also a member of the University of Colorado.",
+        "He was a member of the University of Utah State University.",
+        "He was also a member of the University of Minnesota Vikings."
+      ],
+      "proposal": "unresolved",
+      "proposed_labels": [
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "evidence_notes": "Coach identity and Michigan tenure are supported. Later claims replace coaching jobs with vague membership and malformed institutions, including \"University of Minnesota Vikings\". Do not force these into confident binary factual labels without adjudication.",
+      "supporting_metadata": [
+        {
+          "title": "Jack Nelson (American football)",
+          "sent_id": 1,
+          "sentence": "He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978)."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 0,
+          "sentence": "Gustavus Adolphus College ( ) is a private, coeducational liberal arts college."
+        },
+        {
+          "title": "Gustavus Adolphus College",
+          "sent_id": 1,
+          "sentence": "A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America."
+        }
+      ],
+      "supporting_context": "[TITLE: Jack Nelson (American football)]\nJack \"Jocko\" Nelson (July 12, 1927November 20, 1978) was an American football coach.  He coached football at Utah State University (1955–1957), the University of Colorado (1958), the University of Michigan (1959–1965), Gustavus Adolphus College (1966–1970), and for the Minnesota Vikings (1971–1978).\n\n[TITLE: Gustavus Adolphus College]\nGustavus Adolphus College ( ) is a private, coeducational liberal arts college.  A four-year, residential institution, Gustavus Adolphus College was founded in 1862 by Swedish Americans and is affiliated with the Evangelical Lutheran Church in America.  To this day the school retains Swedish and Lutheran heritage.  The premier event on campus is the annual Nobel Conference, which features Nobel Laureates and other scholars explaining their expertise to a general audience.  In 2015, \"U.S. News & World Report\" ranked Gustavus as the 64th best liberal arts college in the United States.  The college is ranked No. 38 for liberal arts colleges on Payscale's 2016-17 list of highest-paid graduates."
+    },
+    {
+      "id": "5a8581c25542991dd0999e61-organic-0",
+      "group_id": "5a8581c25542991dd0999e61",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The 2014 MW-V6 Pickup Series season included a dance party hosted by the actor who set a Guinness World Record as the most watched man on TV.",
+      "generated_hops": [
+        "Identify the key information: 2014 MW-V6 Pickup Series, Driver, David Hasselhoff, \"Celebrate the 80's and the 90's with The Hoff\", and the record holder."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "2014 MW-V6 Pickup Series",
+          "sent_id": 4,
+          "sentence": "As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others."
+        },
+        {
+          "title": "David Hasselhoff",
+          "sent_id": 0,
+          "sentence": "David Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+        }
+      ],
+      "supporting_context": "[TITLE: 2014 MW-V6 Pickup Series]\nThe 2014 MW-V6 Pickup Series season was a pickup truck racing series that started over 25–27 April in Portimão, Portugal and ended over 17–19 October at the TT Circuit Assen, Netherlands.  MW-V6 was a part of Acceleration 2014, a series of festivals combining top class car and bike racing with music and entertainment.  Next to MW-V6, there was the Formula Acceleration 1, based on the former A1 Grand Prix, the Legend SuperCup, based on legends car racing, and the European Stock 600 and 1000 Series, which featured motorcycle racing for 15- and 16-year-olds.  To attract young, yet serious, racing drivers, the 2014 MW-V6 winning driver was promised half the budget for the 2015 FA1 season and a test day in the FA1 car, or the full budget for the 2015 MW-V6 season plus an FA1 test.  As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others.  Saturday evenings saw performances of international DJs.\n\n[TITLE: David Hasselhoff]\nDavid Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+    },
+    {
+      "id": "5a8581c25542991dd0999e61-organic-1",
+      "group_id": "5a8581c25542991dd0999e61",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The 2014 MW-V6 Pickup Series season included a dance party hosted by the actor who set a Guinness World Record as the most watched man on TV.",
+      "generated_hops": [
+        "Identify the actor who set a Guinness World Record as the most watched man on TV.",
+        "Determine the location where the dance party was hosted."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "2014 MW-V6 Pickup Series",
+          "sent_id": 4,
+          "sentence": "As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others."
+        },
+        {
+          "title": "David Hasselhoff",
+          "sent_id": 0,
+          "sentence": "David Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+        }
+      ],
+      "supporting_context": "[TITLE: 2014 MW-V6 Pickup Series]\nThe 2014 MW-V6 Pickup Series season was a pickup truck racing series that started over 25–27 April in Portimão, Portugal and ended over 17–19 October at the TT Circuit Assen, Netherlands.  MW-V6 was a part of Acceleration 2014, a series of festivals combining top class car and bike racing with music and entertainment.  Next to MW-V6, there was the Formula Acceleration 1, based on the former A1 Grand Prix, the Legend SuperCup, based on legends car racing, and the European Stock 600 and 1000 Series, which featured motorcycle racing for 15- and 16-year-olds.  To attract young, yet serious, racing drivers, the 2014 MW-V6 winning driver was promised half the budget for the 2015 FA1 season and a test day in the FA1 car, or the full budget for the 2015 MW-V6 season plus an FA1 test.  As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others.  Saturday evenings saw performances of international DJs.\n\n[TITLE: David Hasselhoff]\nDavid Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+    },
+    {
+      "id": "5a8581c25542991dd0999e61-organic-2",
+      "group_id": "5a8581c25542991dd0999e61",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The 2014 MW-V6 Pickup Series season included a dance party hosted by the actor who set a Guinness World Record as the most watched man on TV.",
+      "generated_hops": [
+        "Identify the 2014 MW-V6 Pickup Series season.",
+        "Identify the 2014 MW-V6 Pickup Series season winner.",
+        "Identify the 2014 MW-V6 Pickup Series season winner's name.",
+        "Identify the actor who set a Guinness World Record as the most watched man on TV."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "2014 MW-V6 Pickup Series",
+          "sent_id": 4,
+          "sentence": "As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others."
+        },
+        {
+          "title": "David Hasselhoff",
+          "sent_id": 0,
+          "sentence": "David Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+        }
+      ],
+      "supporting_context": "[TITLE: 2014 MW-V6 Pickup Series]\nThe 2014 MW-V6 Pickup Series season was a pickup truck racing series that started over 25–27 April in Portimão, Portugal and ended over 17–19 October at the TT Circuit Assen, Netherlands.  MW-V6 was a part of Acceleration 2014, a series of festivals combining top class car and bike racing with music and entertainment.  Next to MW-V6, there was the Formula Acceleration 1, based on the former A1 Grand Prix, the Legend SuperCup, based on legends car racing, and the European Stock 600 and 1000 Series, which featured motorcycle racing for 15- and 16-year-olds.  To attract young, yet serious, racing drivers, the 2014 MW-V6 winning driver was promised half the budget for the 2015 FA1 season and a test day in the FA1 car, or the full budget for the 2015 MW-V6 season plus an FA1 test.  As for the music, on Friday evenings, David Hasselhoff hosted \"Celebrate the 80's and the 90's with The Hoff\", a dance party featuring 2 Unlimited, Haddaway, Kim Wilde, and others.  Saturday evenings saw performances of international DJs.\n\n[TITLE: David Hasselhoff]\nDavid Michael Hasselhoff (born July 17, 1952), nicknamed \"The Hoff\", is an American actor, singer, producer, and businessman, who set a Guinness World Record as the most watched man on TV."
+    },
+    {
+      "id": "5a8b53225542997f31a41cda-organic-0",
+      "group_id": "5a8b53225542997f31a41cda",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Nice Dreams  an American model, actress, comedian, singer, and author, who portrayed Nancy Bartlett on what sitcom?",
+      "generated_hops": [
+        "Identify the film in the context.",
+        "Determine the recipient of the Atlas Prize.",
+        "Find the information about Sandra Bernhard in relation to the film."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Nice Dreams",
+          "sent_id": 1,
+          "sentence": "It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 0,
+          "sentence": "Sandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 2,
+          "sentence": "Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997."
+        }
+      ],
+      "supporting_context": "[TITLE: Nice Dreams]\nNice Dreams is Cheech & Chong's third feature-length film, released in 1981 by Columbia Pictures.  It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary.  Chong also directed the film.\n\n[TITLE: Sandra Bernhard]\nSandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author.  Bernhard first gained attention in the late–1970s with her stand-up comedy in which she often bitterly critiques celebrity culture and political figures.  Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997.  Bernhard is number ninety-seven on Comedy Central's list of the 100 greatest stand-ups of all time."
+    },
+    {
+      "id": "5a8b53225542997f31a41cda-organic-1",
+      "group_id": "5a8b53225542997f31a41cda",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Nice Dreams  an American model, actress, comedian, singer, and author, who portrayed Nancy Bartlett on what sitcom?",
+      "generated_hops": [
+        "Nice Dreams is Cheech & Chong's third feature-length film.",
+        "Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary.",
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "The Atlas Prize recipient works at Westbridge College."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Nice Dreams",
+          "sent_id": 1,
+          "sentence": "It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 0,
+          "sentence": "Sandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 2,
+          "sentence": "Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997."
+        }
+      ],
+      "supporting_context": "[TITLE: Nice Dreams]\nNice Dreams is Cheech & Chong's third feature-length film, released in 1981 by Columbia Pictures.  It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary.  Chong also directed the film.\n\n[TITLE: Sandra Bernhard]\nSandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author.  Bernhard first gained attention in the late–1970s with her stand-up comedy in which she often bitterly critiques celebrity culture and political figures.  Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997.  Bernhard is number ninety-seven on Comedy Central's list of the 100 greatest stand-ups of all time."
+    },
+    {
+      "id": "5a8b53225542997f31a41cda-organic-2",
+      "group_id": "5a8b53225542997f31a41cda",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Nice Dreams  an American model, actress, comedian, singer, and author, who portrayed Nancy Bartlett on what sitcom?",
+      "generated_hops": [
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "The Atlas Prize recipient works at Westbridge College.",
+        "The Atlas Prize is the third feature-length film."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Nice Dreams",
+          "sent_id": 1,
+          "sentence": "It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 0,
+          "sentence": "Sandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author."
+        },
+        {
+          "title": "Sandra Bernhard",
+          "sent_id": 2,
+          "sentence": "Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997."
+        }
+      ],
+      "supporting_context": "[TITLE: Nice Dreams]\nNice Dreams is Cheech & Chong's third feature-length film, released in 1981 by Columbia Pictures.  It stars Cheech Marin, Tommy Chong, Paul Reubens, Stacy Keach, Evelyn Guerrero, Sandra Bernhard, and Timothy Leary.  Chong also directed the film.\n\n[TITLE: Sandra Bernhard]\nSandra Bernhard (born June 6, 1955) is an American model, actress, comedian, singer and author.  Bernhard first gained attention in the late–1970s with her stand-up comedy in which she often bitterly critiques celebrity culture and political figures.  Bernhard is best known as portraying Nancy Barlett Thomas on the ABC sitcom \"Roseanne\" beginning in the fourth season (1991) until the show ended in 1997.  Bernhard is number ninety-seven on Comedy Central's list of the 100 greatest stand-ups of all time."
+    },
+    {
+      "id": "5a8d7ebd55429941ae14dfdb-organic-0",
+      "group_id": "5a8d7ebd55429941ae14dfdb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Who presided over the draft when Eric Steven Weddle was drafted by the San Diego Chargers?",
+      "generated_hops": [
+        "Eric Steven Weddle was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0
+      ],
+      "evidence_notes": "Eric Weddle paragraph supports identity, safety position, Utah career and Chargers draft. Draft paragraph supports Radio City Music Hall and NFL Network coverage. Some chains do not answer who presided, but incompleteness is not a factual-error label.",
+      "supporting_metadata": [
+        {
+          "title": "Eric Weddle",
+          "sent_id": 0,
+          "sentence": "Eric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL)."
+        },
+        {
+          "title": "Eric Weddle",
+          "sent_id": 2,
+          "sentence": "He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft."
+        },
+        {
+          "title": "2007 NFL Draft",
+          "sent_id": 5,
+          "sentence": "This was the first draft presided over by new NFL Commissioner Roger Goodell."
+        }
+      ],
+      "supporting_context": "[TITLE: Eric Weddle]\nEric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL).  He played college football at Utah, where he was a consensus All-American.  He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft.\n\n[TITLE: 2007 NFL Draft]\nThe 2007 National Football League draft took place at Radio City Music Hall in New York City, New York, on April 28 and April 29, 2007.  The draft was televised for the 28th consecutive year on ESPN and ESPN2.  The NFL Network also broadcast coverage of the event, its second year doing so.  There were 255 draft selections: 223 regular selections (instead of the typical 224) and 32 compensatory selections.  A supplemental draft was also held after the regular draft and before the regular season.  This was the first draft presided over by new NFL Commissioner Roger Goodell."
+    },
+    {
+      "id": "5a8d7ebd55429941ae14dfdb-organic-1",
+      "group_id": "5a8d7ebd55429941ae14dfdb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Who presided over the draft when Eric Steven Weddle was drafted by the San Diego Chargers?",
+      "generated_hops": [
+        "Eric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL).",
+        "He played college football at Utah, where he was a consensus All-American.",
+        "He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Eric Weddle paragraph supports identity, safety position, Utah career and Chargers draft. Draft paragraph supports Radio City Music Hall and NFL Network coverage. Some chains do not answer who presided, but incompleteness is not a factual-error label.",
+      "supporting_metadata": [
+        {
+          "title": "Eric Weddle",
+          "sent_id": 0,
+          "sentence": "Eric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL)."
+        },
+        {
+          "title": "Eric Weddle",
+          "sent_id": 2,
+          "sentence": "He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft."
+        },
+        {
+          "title": "2007 NFL Draft",
+          "sent_id": 5,
+          "sentence": "This was the first draft presided over by new NFL Commissioner Roger Goodell."
+        }
+      ],
+      "supporting_context": "[TITLE: Eric Weddle]\nEric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL).  He played college football at Utah, where he was a consensus All-American.  He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft.\n\n[TITLE: 2007 NFL Draft]\nThe 2007 National Football League draft took place at Radio City Music Hall in New York City, New York, on April 28 and April 29, 2007.  The draft was televised for the 28th consecutive year on ESPN and ESPN2.  The NFL Network also broadcast coverage of the event, its second year doing so.  There were 255 draft selections: 223 regular selections (instead of the typical 224) and 32 compensatory selections.  A supplemental draft was also held after the regular draft and before the regular season.  This was the first draft presided over by new NFL Commissioner Roger Goodell."
+    },
+    {
+      "id": "5a8d7ebd55429941ae14dfdb-organic-2",
+      "group_id": "5a8d7ebd55429941ae14dfdb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Who presided over the draft when Eric Steven Weddle was drafted by the San Diego Chargers?",
+      "generated_hops": [
+        "Eric Steven Weddle was drafted by the San Diego Chargers.",
+        "Eric Steven Weddle was a free safety.",
+        "The 2007 NFL Draft took place at Radio City Music Hall.",
+        "The NFL Network also broadcast coverage of the event."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Eric Weddle paragraph supports identity, safety position, Utah career and Chargers draft. Draft paragraph supports Radio City Music Hall and NFL Network coverage. Some chains do not answer who presided, but incompleteness is not a factual-error label.",
+      "supporting_metadata": [
+        {
+          "title": "Eric Weddle",
+          "sent_id": 0,
+          "sentence": "Eric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL)."
+        },
+        {
+          "title": "Eric Weddle",
+          "sent_id": 2,
+          "sentence": "He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft."
+        },
+        {
+          "title": "2007 NFL Draft",
+          "sent_id": 5,
+          "sentence": "This was the first draft presided over by new NFL Commissioner Roger Goodell."
+        }
+      ],
+      "supporting_context": "[TITLE: Eric Weddle]\nEric Steven Weddle (born January 4, 1985) is an American football free safety for the Baltimore Ravens of the National Football League (NFL).  He played college football at Utah, where he was a consensus All-American.  He was drafted by the San Diego Chargers in the second round of the 2007 NFL Draft.\n\n[TITLE: 2007 NFL Draft]\nThe 2007 National Football League draft took place at Radio City Music Hall in New York City, New York, on April 28 and April 29, 2007.  The draft was televised for the 28th consecutive year on ESPN and ESPN2.  The NFL Network also broadcast coverage of the event, its second year doing so.  There were 255 draft selections: 223 regular selections (instead of the typical 224) and 32 compensatory selections.  A supplemental draft was also held after the regular draft and before the regular season.  This was the first draft presided over by new NFL Commissioner Roger Goodell."
+    },
+    {
+      "id": "5ab25db35542993be8fa98e5-organic-0",
+      "group_id": "5ab25db35542993be8fa98e5",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Craig Goldy is a guitarist in what American heavy metal band that was formed in 1982?",
+      "generated_hops": [
+        "Identify the context provided, which states: Craig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio.",
+        "Recognize that the context mentions that Craig Goldy is an American guitarist.",
+        "Find the band mentioned in the context, which is Dio.",
+        "Identify the specific band that was formed in 1982."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Craig Goldy",
+          "sent_id": 0,
+          "sentence": "Craig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio."
+        },
+        {
+          "title": "Dio (band)",
+          "sent_id": 0,
+          "sentence": "Dio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer."
+        }
+      ],
+      "supporting_context": "[TITLE: Craig Goldy]\nCraig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio.\n\n[TITLE: Dio (band)]\nDio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer.  The name Dio was chosen because it made sense from a commercial standpoint, as the name was already well known at that time."
+    },
+    {
+      "id": "5ab25db35542993be8fa98e5-organic-1",
+      "group_id": "5ab25db35542993be8fa98e5",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Craig Goldy is a guitarist in what American heavy metal band that was formed in 1982?",
+      "generated_hops": [
+        "Craig Goldy is an American guitarist.",
+        "Craig Goldy is a vocalist.",
+        "Craig Goldy is a member of a band.",
+        "The band is named Dio."
+      ],
+      "proposal": "unresolved",
+      "proposed_labels": [
+        0,
+        null,
+        0,
+        0
+      ],
+      "evidence_notes": "Craig Goldy paragraph supports guitarist and Dio affiliation. Calling him a vocalist is not established by these paragraphs, but being a guitarist does not logically preclude also being a vocalist. Do not label hop 2 false merely from absence of evidence.",
+      "supporting_metadata": [
+        {
+          "title": "Craig Goldy",
+          "sent_id": 0,
+          "sentence": "Craig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio."
+        },
+        {
+          "title": "Dio (band)",
+          "sent_id": 0,
+          "sentence": "Dio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer."
+        }
+      ],
+      "supporting_context": "[TITLE: Craig Goldy]\nCraig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio.\n\n[TITLE: Dio (band)]\nDio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer.  The name Dio was chosen because it made sense from a commercial standpoint, as the name was already well known at that time."
+    },
+    {
+      "id": "5ab25db35542993be8fa98e5-organic-2",
+      "group_id": "5ab25db35542993be8fa98e5",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Craig Goldy is a guitarist in what American heavy metal band that was formed in 1982?",
+      "generated_hops": [
+        "Identify that Craig Goldy is an American guitarist.",
+        "Identify that the band is Dio.",
+        "Identify that the band was formed in 1982.",
+        "Identify that the band is led by vocalist Ronnie James Dio.",
+        "Identify that the band is led by fellow former Black Sabbath member Vinny Appice."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Craig Goldy",
+          "sent_id": 0,
+          "sentence": "Craig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio."
+        },
+        {
+          "title": "Dio (band)",
+          "sent_id": 0,
+          "sentence": "Dio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer."
+        }
+      ],
+      "supporting_context": "[TITLE: Craig Goldy]\nCraig Goldy (born November 6, 1961) is an American guitarist, most notably of the band Dio.\n\n[TITLE: Dio (band)]\nDio was an American heavy metal band formed in 1982 and led by vocalist Ronnie James Dio, after he left Black Sabbath with intentions to form a new band with fellow former Black Sabbath member Vinny Appice, the band's drummer.  The name Dio was chosen because it made sense from a commercial standpoint, as the name was already well known at that time."
+    },
+    {
+      "id": "5abddc0a5542991f66106077-organic-0",
+      "group_id": "5abddc0a5542991f66106077",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The Nanny Diaries is a 2007 American comedy-drama film starring an American actor known for his superhero roles as what Fantastic Four characters?",
+      "generated_hops": [
+        "Identify the main subject of the question - the Nanny Diaries.",
+        "Determine the genre of the film - comedy-drama.",
+        "Find the starring actor - Chris Evans.",
+        "Determine the character the actor portrays - Johnny Storm."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 0,
+          "sentence": "The Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus."
+        },
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 1,
+          "sentence": "Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 0,
+          "sentence": "Christopher Robert Evans (born June 13, 1981) is an American actor and filmmaker."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 1,
+          "sentence": "Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+        }
+      ],
+      "supporting_context": "[TITLE: The Nanny Diaries (film)]\nThe Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus.  Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein.\n\n[TITLE: Chris Evans (actor)]\nChristopher Robert Evans (born June 13, 1981) is an American actor and filmmaker.  Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+    },
+    {
+      "id": "5abddc0a5542991f66106077-organic-1",
+      "group_id": "5abddc0a5542991f66106077",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The Nanny Diaries is a 2007 American comedy-drama film starring an American actor known for his superhero roles as what Fantastic Four characters?",
+      "generated_hops": [
+        "Identify the main character of the Nanny Diaries film: The Nanny Diaries is a 2007 American comedy-drama film.",
+        "Identify the main character of the film: The Nanny Diaries is based on the novel of the same name by Emma McLaughlin and Nicola Kraus.",
+        "Determine the nationality of the main character of the film: The main character of the film is an American actor known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\"."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 0,
+          "sentence": "The Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus."
+        },
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 1,
+          "sentence": "Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 0,
+          "sentence": "Christopher Robert Evans (born June 13, 1981) is an American actor and filmmaker."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 1,
+          "sentence": "Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+        }
+      ],
+      "supporting_context": "[TITLE: The Nanny Diaries (film)]\nThe Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus.  Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein.\n\n[TITLE: Chris Evans (actor)]\nChristopher Robert Evans (born June 13, 1981) is an American actor and filmmaker.  Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+    },
+    {
+      "id": "5abddc0a5542991f66106077-organic-2",
+      "group_id": "5abddc0a5542991f66106077",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "The Nanny Diaries is a 2007 American comedy-drama film starring an American actor known for his superhero roles as what Fantastic Four characters?",
+      "generated_hops": [
+        "Identify the title of the film: The Nanny Diaries",
+        "Identify the main character: Chris Evans",
+        "Identify the superhero roles: Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\"",
+        "Identify the Fantastic Four characters: Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\""
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 0,
+          "sentence": "The Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus."
+        },
+        {
+          "title": "The Nanny Diaries (film)",
+          "sent_id": 1,
+          "sentence": "Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 0,
+          "sentence": "Christopher Robert Evans (born June 13, 1981) is an American actor and filmmaker."
+        },
+        {
+          "title": "Chris Evans (actor)",
+          "sent_id": 1,
+          "sentence": "Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+        }
+      ],
+      "supporting_context": "[TITLE: The Nanny Diaries (film)]\nThe Nanny Diaries is a 2007 American comedy-drama film, based on the novel of the same name by Emma McLaughlin and Nicola Kraus.  Written and directed by Shari Springer Berman and Robert Pulcini, it stars Scarlett Johansson, Chris Evans, and Laura Linney; and was produced by Richard N. Gladstein.\n\n[TITLE: Chris Evans (actor)]\nChristopher Robert Evans (born June 13, 1981) is an American actor and filmmaker.  Evans is known for his superhero roles as the Marvel Comics characters Steve Rogers / Captain America in the Marvel Cinematic Universe and Johnny Storm / Human Torch in \"Fantastic Four\" and ."
+    },
+    {
+      "id": "5ac326af554299657fa290ea-organic-0",
+      "group_id": "5ac326af554299657fa290ea",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What rear wheel drive car used the getrag 282 transmission?",
+      "generated_hops": [
+        "The Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.",
+        "The Fiero was a mid-engined sports car built by Pontiac from 1983 to 1988.",
+        "The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes.",
+        "The Fiero was designed by George Milidrag and Hulki Aldikacti as a sports car.",
+        "The Fiero was the first and only mass-produced mid-engine sports car by a U.S. manufacturer.",
+        "Many technologies incorporated in the Fiero design such as plastic body panels were radical for their time.",
+        "Other features included hidden headlamps and, initially, integrated stereo speakers within the driver and passenger headrests."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Getrag paragraph supports transmission design, aliases, applications and later naming. Pontiac Fiero paragraph supports build years, designers, seating/history and listed design features. No contradiction was identified in these selected source-relative assertions.",
+      "supporting_metadata": [
+        {
+          "title": "Getrag 282 transmission",
+          "sent_id": 3,
+          "sentence": "It was also used in the mid-engined rear-wheel drive Pontiac Fiero."
+        },
+        {
+          "title": "Pontiac Fiero",
+          "sent_id": 2,
+          "sentence": "The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer."
+        }
+      ],
+      "supporting_context": "[TITLE: Getrag 282 transmission]\nThe Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.  It is sometimes referred to as the Muncie 282 or the Muncie Getrag 282, as the transmission was manufactured by the Muncie, Indiana manual transmission plant.  It has been used in various front-wheel drive transverse engine applications including the Chevrolet Cavalier, Pontiac Sunbird, Pontiac Grand Am, Chevrolet Beretta and the Oldsmobile Achieva.  It was also used in the mid-engined rear-wheel drive Pontiac Fiero.  In its later years, the Getrag 282 was manufactured by New Venture Gear and renamed the NVG T550.\n\n[TITLE: Pontiac Fiero]\nThe Pontiac Fiero is a mid-engined sports car built by Pontiac from 1983 to 1988.  The Fiero was designed by George Milidrag and Hulki Aldikacti as a sports car.  The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer.  Many technologies incorporated in the Fiero design such as plastic body panels were radical for their time.  Other features included hidden headlamps and, initially, integrated stereo speakers within the driver and passenger headrests."
+    },
+    {
+      "id": "5ac326af554299657fa290ea-organic-1",
+      "group_id": "5ac326af554299657fa290ea",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What rear wheel drive car used the getrag 282 transmission?",
+      "generated_hops": [
+        "The Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.",
+        "It is sometimes referred to as the Muncie 282 or the Muncie Getrag 282, as the transmission was manufactured by the Muncie, Indiana manual transmission plant.",
+        "The Getrag 282 was used in various front-wheel drive transverse engine applications including the Chevrolet Cavalier, Pontiac Sunbird, Pontiac Grand Am, Chevrolet Beretta and the Oldsmobile Achieva.",
+        "It was also used in the mid-engined rear-wheel drive Pontiac Fiero.",
+        "In its later years, the Getrag 282 was manufactured by New Venture Gear and renamed the NVG T550."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Getrag paragraph supports transmission design, aliases, applications and later naming. Pontiac Fiero paragraph supports build years, designers, seating/history and listed design features. No contradiction was identified in these selected source-relative assertions.",
+      "supporting_metadata": [
+        {
+          "title": "Getrag 282 transmission",
+          "sent_id": 3,
+          "sentence": "It was also used in the mid-engined rear-wheel drive Pontiac Fiero."
+        },
+        {
+          "title": "Pontiac Fiero",
+          "sent_id": 2,
+          "sentence": "The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer."
+        }
+      ],
+      "supporting_context": "[TITLE: Getrag 282 transmission]\nThe Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.  It is sometimes referred to as the Muncie 282 or the Muncie Getrag 282, as the transmission was manufactured by the Muncie, Indiana manual transmission plant.  It has been used in various front-wheel drive transverse engine applications including the Chevrolet Cavalier, Pontiac Sunbird, Pontiac Grand Am, Chevrolet Beretta and the Oldsmobile Achieva.  It was also used in the mid-engined rear-wheel drive Pontiac Fiero.  In its later years, the Getrag 282 was manufactured by New Venture Gear and renamed the NVG T550.\n\n[TITLE: Pontiac Fiero]\nThe Pontiac Fiero is a mid-engined sports car built by Pontiac from 1983 to 1988.  The Fiero was designed by George Milidrag and Hulki Aldikacti as a sports car.  The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer.  Many technologies incorporated in the Fiero design such as plastic body panels were radical for their time.  Other features included hidden headlamps and, initially, integrated stereo speakers within the driver and passenger headrests."
+    },
+    {
+      "id": "5ac326af554299657fa290ea-organic-2",
+      "group_id": "5ac326af554299657fa290ea",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What rear wheel drive car used the getrag 282 transmission?",
+      "generated_hops": [
+        "The Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.",
+        "The Fiero was built by Pontiac from 1983 to 1988.",
+        "The Fiero was designed by George Milidrag and Hulki Aldikacti."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Getrag paragraph supports transmission design, aliases, applications and later naming. Pontiac Fiero paragraph supports build years, designers, seating/history and listed design features. No contradiction was identified in these selected source-relative assertions.",
+      "supporting_metadata": [
+        {
+          "title": "Getrag 282 transmission",
+          "sent_id": 3,
+          "sentence": "It was also used in the mid-engined rear-wheel drive Pontiac Fiero."
+        },
+        {
+          "title": "Pontiac Fiero",
+          "sent_id": 2,
+          "sentence": "The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer."
+        }
+      ],
+      "supporting_context": "[TITLE: Getrag 282 transmission]\nThe Getrag 282 transmission was a 5-speed manual transaxle designed by Getrag for Chevrolet.  It is sometimes referred to as the Muncie 282 or the Muncie Getrag 282, as the transmission was manufactured by the Muncie, Indiana manual transmission plant.  It has been used in various front-wheel drive transverse engine applications including the Chevrolet Cavalier, Pontiac Sunbird, Pontiac Grand Am, Chevrolet Beretta and the Oldsmobile Achieva.  It was also used in the mid-engined rear-wheel drive Pontiac Fiero.  In its later years, the Getrag 282 was manufactured by New Venture Gear and renamed the NVG T550.\n\n[TITLE: Pontiac Fiero]\nThe Pontiac Fiero is a mid-engined sports car built by Pontiac from 1983 to 1988.  The Fiero was designed by George Milidrag and Hulki Aldikacti as a sports car.  The Fiero was the first two-seater Pontiac since the 1926 to 1938 coupes, and also the first and only mass-produced mid-engine sports car by a U.S. manufacturer.  Many technologies incorporated in the Fiero design such as plastic body panels were radical for their time.  Other features included hidden headlamps and, initially, integrated stereo speakers within the driver and passenger headrests."
+    },
+    {
+      "id": "5add381f5542990dbb2f7dcf-organic-0",
+      "group_id": "5add381f5542990dbb2f7dcf",
+      "split": "test",
+      "parser_status": "generation_cut_off",
+      "question": "At which university is the American football coach, who coached the 2012 USC Trojans football team, currently head football coach?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is generation_cut_off. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "2012 USC Trojans football team",
+          "sent_id": 1,
+          "sentence": "The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference."
+        },
+        {
+          "title": "Lane Kiffin",
+          "sent_id": 0,
+          "sentence": "Lane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012 USC Trojans football team]\nThe 2012 USC Trojans football team represented the University of Southern California in the 2012 NCAA Division I FBS college football season.  The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference.  USC returned 18 starters and 13 All-Conference performers from a team that finished the 2011 season ranked No. 6 in the AP Poll with a 10–2 record overall, and finished first in the South Division with a 7–2 record in Pac-12 play.  However, as part of a two-year-post-season ban mandated by the NCAA, the Trojans could not claim the 2011 Pac-12 South Division title, participate in the conference championship game or play in a bowl game.  The 2012 season was the first year under Kiffin that the Trojans were eligible for post-season play.  They started the season ranked #1 in the AP Poll, but finished unranked—the first team to do so since the 1964 Ole Miss Rebels and the first to do so in the BCS-era.  The Trojans finished the season 7–6, 5–4 in Pac-12 play, tied for second in the Pac-12 South Division.  They were invited to the Sun Bowl where they were defeated 21-7 by Georgia Tech.\n\n[TITLE: Lane Kiffin]\nLane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+    },
+    {
+      "id": "5add381f5542990dbb2f7dcf-organic-1",
+      "group_id": "5add381f5542990dbb2f7dcf",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "At which university is the American football coach, who coached the 2012 USC Trojans football team, currently head football coach?",
+      "generated_hops": [
+        "The 2012 USC Trojans football team represented the University of Southern California.",
+        "The University of Southern California is the home school of the Trojans.",
+        "Therefore, the 2012 USC Trojans football team was coached by their head coach, Lane Kiffin.",
+        "Lane Kiffin is the head football coach at Florida Atlantic University."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "USC team paragraph establishes university and Lane Kiffin coaching role. Lane Kiffin paragraph gives Florida Atlantic affiliation in the dataset snapshot. This is not a claim about his present-day job.",
+      "supporting_metadata": [
+        {
+          "title": "2012 USC Trojans football team",
+          "sent_id": 1,
+          "sentence": "The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference."
+        },
+        {
+          "title": "Lane Kiffin",
+          "sent_id": 0,
+          "sentence": "Lane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012 USC Trojans football team]\nThe 2012 USC Trojans football team represented the University of Southern California in the 2012 NCAA Division I FBS college football season.  The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference.  USC returned 18 starters and 13 All-Conference performers from a team that finished the 2011 season ranked No. 6 in the AP Poll with a 10–2 record overall, and finished first in the South Division with a 7–2 record in Pac-12 play.  However, as part of a two-year-post-season ban mandated by the NCAA, the Trojans could not claim the 2011 Pac-12 South Division title, participate in the conference championship game or play in a bowl game.  The 2012 season was the first year under Kiffin that the Trojans were eligible for post-season play.  They started the season ranked #1 in the AP Poll, but finished unranked—the first team to do so since the 1964 Ole Miss Rebels and the first to do so in the BCS-era.  The Trojans finished the season 7–6, 5–4 in Pac-12 play, tied for second in the Pac-12 South Division.  They were invited to the Sun Bowl where they were defeated 21-7 by Georgia Tech.\n\n[TITLE: Lane Kiffin]\nLane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+    },
+    {
+      "id": "5add381f5542990dbb2f7dcf-organic-2",
+      "group_id": "5add381f5542990dbb2f7dcf",
+      "split": "test",
+      "parser_status": "generation_cut_off",
+      "question": "At which university is the American football coach, who coached the 2012 USC Trojans football team, currently head football coach?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is generation_cut_off. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "2012 USC Trojans football team",
+          "sent_id": 1,
+          "sentence": "The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference."
+        },
+        {
+          "title": "Lane Kiffin",
+          "sent_id": 0,
+          "sentence": "Lane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012 USC Trojans football team]\nThe 2012 USC Trojans football team represented the University of Southern California in the 2012 NCAA Division I FBS college football season.  The Trojans were led by third-year head coach Lane Kiffin, played their home games at Los Angeles Memorial Coliseum, and were members of the South Division of the Pac-12 Conference.  USC returned 18 starters and 13 All-Conference performers from a team that finished the 2011 season ranked No. 6 in the AP Poll with a 10–2 record overall, and finished first in the South Division with a 7–2 record in Pac-12 play.  However, as part of a two-year-post-season ban mandated by the NCAA, the Trojans could not claim the 2011 Pac-12 South Division title, participate in the conference championship game or play in a bowl game.  The 2012 season was the first year under Kiffin that the Trojans were eligible for post-season play.  They started the season ranked #1 in the AP Poll, but finished unranked—the first team to do so since the 1964 Ole Miss Rebels and the first to do so in the BCS-era.  The Trojans finished the season 7–6, 5–4 in Pac-12 play, tied for second in the Pac-12 South Division.  They were invited to the Sun Bowl where they were defeated 21-7 by Georgia Tech.\n\n[TITLE: Lane Kiffin]\nLane Monte Kiffin (born May 9, 1975) is an American football coach who is currently the head football coach at Florida Atlantic University."
+    },
+    {
+      "id": "5adea3d95542997c77adee95-organic-0",
+      "group_id": "5adea3d95542997c77adee95",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Which writer of Against All Enemies was born April 12, 1947?",
+      "generated_hops": [
+        "Identify the novel title: Against All Enemies",
+        "Determine the author: Tom Clancy",
+        "Check the birthdate: Tom Clancy was born on April 12, 1947."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Against All Enemies (novel)",
+          "sent_id": 0,
+          "sentence": "Against All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep."
+        },
+        {
+          "title": "Tom Clancy",
+          "sent_id": 0,
+          "sentence": "Thomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War."
+        }
+      ],
+      "supporting_context": "[TITLE: Against All Enemies (novel)]\nAgainst All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep.  It appears not to be part of the Jack Ryan series of novels, and instead introduces a new hero, ex-Navy SEAL and CIA paramilitary operations officer Maxwell Moore.  Although, at the end of this novel, a character from the Jack Ryan series of novels (Dominic Caruso) attempts to recruit Maxwell Moore into the Campus.\n\n[TITLE: Tom Clancy]\nThomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War.  Seventeen of his novels were bestsellers, and more than 100 million copies of his books are in print.  His name was also used on movie scripts written by ghost writers, nonfiction books on military subjects, and video games.  He was a part-owner of the Baltimore Orioles and vice-chairman of their community activities and public affairs committees."
+    },
+    {
+      "id": "5adea3d95542997c77adee95-organic-1",
+      "group_id": "5adea3d95542997c77adee95",
+      "split": "test",
+      "parser_status": "hop_count",
+      "question": "Which writer of Against All Enemies was born April 12, 1947?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is hop_count. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Against All Enemies (novel)",
+          "sent_id": 0,
+          "sentence": "Against All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep."
+        },
+        {
+          "title": "Tom Clancy",
+          "sent_id": 0,
+          "sentence": "Thomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War."
+        }
+      ],
+      "supporting_context": "[TITLE: Against All Enemies (novel)]\nAgainst All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep.  It appears not to be part of the Jack Ryan series of novels, and instead introduces a new hero, ex-Navy SEAL and CIA paramilitary operations officer Maxwell Moore.  Although, at the end of this novel, a character from the Jack Ryan series of novels (Dominic Caruso) attempts to recruit Maxwell Moore into the Campus.\n\n[TITLE: Tom Clancy]\nThomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War.  Seventeen of his novels were bestsellers, and more than 100 million copies of his books are in print.  His name was also used on movie scripts written by ghost writers, nonfiction books on military subjects, and video games.  He was a part-owner of the Baltimore Orioles and vice-chairman of their community activities and public affairs committees."
+    },
+    {
+      "id": "5adea3d95542997c77adee95-organic-2",
+      "group_id": "5adea3d95542997c77adee95",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Which writer of Against All Enemies was born April 12, 1947?",
+      "generated_hops": [
+        "Identify the title of the novel: \"Against All Enemies\"",
+        "Determine the author of the novel: Tom Clancy",
+        "Check if Tom Clancy was born on April 12, 1947: Yes",
+        "Confirm that Tom Clancy is the author of the novel: Yes"
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Against All Enemies (novel)",
+          "sent_id": 0,
+          "sentence": "Against All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep."
+        },
+        {
+          "title": "Tom Clancy",
+          "sent_id": 0,
+          "sentence": "Thomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War."
+        }
+      ],
+      "supporting_context": "[TITLE: Against All Enemies (novel)]\nAgainst All Enemies is a 2011 spy novel by Tom Clancy and Peter Telep.  It appears not to be part of the Jack Ryan series of novels, and instead introduces a new hero, ex-Navy SEAL and CIA paramilitary operations officer Maxwell Moore.  Although, at the end of this novel, a character from the Jack Ryan series of novels (Dominic Caruso) attempts to recruit Maxwell Moore into the Campus.\n\n[TITLE: Tom Clancy]\nThomas Leo \"Tom\" Clancy Jr. (April 12, 1947 – October 1, 2013) was an American novelist best known for his technically detailed espionage and military-science story lines set during and after the Cold War.  Seventeen of his novels were bestsellers, and more than 100 million copies of his books are in print.  His name was also used on movie scripts written by ghost writers, nonfiction books on military subjects, and video games.  He was a part-owner of the Baltimore Orioles and vice-chairman of their community activities and public affairs committees."
+    },
+    {
+      "id": "5adf3b905542992d7e9f92fb-organic-0",
+      "group_id": "5adf3b905542992d7e9f92fb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Hoku's song \"Another Dumb Blond\" was from the film Snow Day by which company?",
+      "generated_hops": [
+        "Hoku Ho Clements (born Hoku Christian Ho, June 10, 1981) is an American singer.",
+        "She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day.\"",
+        "The soundtrack and film \"Snow Day\" were directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies.",
+        "The film \"Snow Day\" premiered on January 29, 2000.",
+        "The film \"Snow Day\" was released on February 11, 2000.",
+        "The film \"Snow Day\" was met with generally negative reviews from film critics."
+      ],
+      "proposal": "unresolved",
+      "proposed_labels": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Identity, song association, premiere date, release date, and reviews are supported. Hop 3 attributes the film director/production companies jointly to soundtrack and film; the context only establishes those credits for the film. Missing soundtrack evidence is not by itself proof of falsehood.",
+      "supporting_metadata": [
+        {
+          "title": "Hoku",
+          "sent_id": 0,
+          "sentence": "Hoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer."
+        },
+        {
+          "title": "Hoku",
+          "sent_id": 1,
+          "sentence": "She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\"."
+        },
+        {
+          "title": "Snow Day (film)",
+          "sent_id": 0,
+          "sentence": "Snow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies."
+        }
+      ],
+      "supporting_context": "[TITLE: Hoku]\nHoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer.  She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\".\n\n[TITLE: Snow Day (film)]\nSnow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies.  Its premiere was on January 29, 2000 at the Paramount Studios.  After that, it was widely released on February 11, 2000, and was met with generally negative reviews from film critics, but was a modest box office success.  It was released on home video on October 3, 2000."
+    },
+    {
+      "id": "5adf3b905542992d7e9f92fb-organic-1",
+      "group_id": "5adf3b905542992d7e9f92fb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Hoku's song \"Another Dumb Blond\" was from the film Snow Day by which company?",
+      "generated_hops": [
+        "Hoku is an American singer.",
+        "She is known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\".",
+        "The film Snow Day is about a woman who works at Westbridge College.",
+        "The film was released on February 11, 2000.",
+        "It was met with generally negative reviews from film critics."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Hoku",
+          "sent_id": 0,
+          "sentence": "Hoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer."
+        },
+        {
+          "title": "Hoku",
+          "sent_id": 1,
+          "sentence": "She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\"."
+        },
+        {
+          "title": "Snow Day (film)",
+          "sent_id": 0,
+          "sentence": "Snow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies."
+        }
+      ],
+      "supporting_context": "[TITLE: Hoku]\nHoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer.  She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\".\n\n[TITLE: Snow Day (film)]\nSnow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies.  Its premiere was on January 29, 2000 at the Paramount Studios.  After that, it was widely released on February 11, 2000, and was met with generally negative reviews from film critics, but was a modest box office success.  It was released on home video on October 3, 2000."
+    },
+    {
+      "id": "5adf3b905542992d7e9f92fb-organic-2",
+      "group_id": "5adf3b905542992d7e9f92fb",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Hoku's song \"Another Dumb Blond\" was from the film Snow Day by which company?",
+      "generated_hops": [
+        "Hoku is known as Omar.",
+        "She works at Westbridge College.",
+        "Omar is an American singer.",
+        "She is best known for her 2000 hit single \"Another Dumb Blonde\".",
+        "Hoku is an American singer.",
+        "She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\"."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Hoku",
+          "sent_id": 0,
+          "sentence": "Hoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer."
+        },
+        {
+          "title": "Hoku",
+          "sent_id": 1,
+          "sentence": "She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\"."
+        },
+        {
+          "title": "Snow Day (film)",
+          "sent_id": 0,
+          "sentence": "Snow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies."
+        }
+      ],
+      "supporting_context": "[TITLE: Hoku]\nHoku Ho Clements (born Hoku Christian Ho, June 10, 1981), known mononymously as Hoku, is an American singer.  She is best known for her 2000 hit single \"Another Dumb Blonde\" from the soundtrack and film \"Snow Day\" and the song \"Perfect Day\" from the soundtrack and film \"Legally Blonde\".\n\n[TITLE: Snow Day (film)]\nSnow Day is a 2000 American comedy film directed by Chris Koch and produced by Paramount Pictures and Nickelodeon Movies.  Its premiere was on January 29, 2000 at the Paramount Studios.  After that, it was widely released on February 11, 2000, and was met with generally negative reviews from film critics, but was a modest box office success.  It was released on home video on October 3, 2000."
+    },
+    {
+      "id": "5ae2c5105542996483e64a4e-organic-0",
+      "group_id": "5ae2c5105542996483e64a4e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What is the nationality of this footballer who plays for German club FC Bayern Munich born in 1988, who was added during the 2012–13 FC Bayern Munich season?",
+      "generated_hops": [
+        "The question mentions that the nationality of the footballer is unknown.",
+        "The footballer is born in 1988.",
+        "The footballer was added during the 2012–13 FC Bayern Munich season."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Hop 1 is commentary about the question supposedly saying nationality is unknown; remaining hops restate question premises. Exclude as a question-commentary output rather than treating it as a verified natural factual error.",
+      "supporting_metadata": [
+        {
+          "title": "2012–13 FC Bayern Munich season",
+          "sent_id": 2,
+          "sentence": "Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline."
+        },
+        {
+          "title": "Javi Martínez",
+          "sent_id": 0,
+          "sentence": "Javier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012–13 FC Bayern Munich season]\nThe 2012–13 FC Bayern Munich season was the 114th season in the club's history and the 48th consecutive season in the top flight of German football, the Bundesliga, since the promotion of the team from the Regionalliga Süd in 1965.  Before the start of the season, Bayern signed Xherdan Shaqiri, Dante, Claudio Pizarro, Mitchell Weiser, Tom Starke and Mario Mandžukić.  Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline.  The club started the season with a nine-match winning streak.  The club would end the season claiming the Treble, winning the Bundesliga, the UEFA Champions League and the DFB-Pokal.  Bayern are the first German club to achieve the Treble and are the third European Club to complete the Treble in the last five seasons and seventh ever in European Club competition.\n\n[TITLE: Javi Martínez]\nJavier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+    },
+    {
+      "id": "5ae2c5105542996483e64a4e-organic-1",
+      "group_id": "5ae2c5105542996483e64a4e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What is the nationality of this footballer who plays for German club FC Bayern Munich born in 1988, who was added during the 2012–13 FC Bayern Munich season?",
+      "generated_hops": [
+        "The player is mentioned to be a Spanish footballer.",
+        "The player is named Javier \"Javi\" Martínez.",
+        "The player was born on 2nd September, 1988.",
+        "The player played for German club FC Bayern Munich.",
+        "The player was added during the 2012-13 FC Bayern Munich season."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Javi Martinez paragraph states name, Spanish nationality, 2 September 1988 birth, and Bayern club. Season paragraph states Bayern added him during 2012-13. Relative to the source snapshot, the assertions are supported.",
+      "supporting_metadata": [
+        {
+          "title": "2012–13 FC Bayern Munich season",
+          "sent_id": 2,
+          "sentence": "Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline."
+        },
+        {
+          "title": "Javi Martínez",
+          "sent_id": 0,
+          "sentence": "Javier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012–13 FC Bayern Munich season]\nThe 2012–13 FC Bayern Munich season was the 114th season in the club's history and the 48th consecutive season in the top flight of German football, the Bundesliga, since the promotion of the team from the Regionalliga Süd in 1965.  Before the start of the season, Bayern signed Xherdan Shaqiri, Dante, Claudio Pizarro, Mitchell Weiser, Tom Starke and Mario Mandžukić.  Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline.  The club started the season with a nine-match winning streak.  The club would end the season claiming the Treble, winning the Bundesliga, the UEFA Champions League and the DFB-Pokal.  Bayern are the first German club to achieve the Treble and are the third European Club to complete the Treble in the last five seasons and seventh ever in European Club competition.\n\n[TITLE: Javi Martínez]\nJavier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+    },
+    {
+      "id": "5ae2c5105542996483e64a4e-organic-2",
+      "group_id": "5ae2c5105542996483e64a4e",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "What is the nationality of this footballer who plays for German club FC Bayern Munich born in 1988, who was added during the 2012–13 FC Bayern Munich season?",
+      "generated_hops": [
+        "The context mentions that this footballer is a Spanish footballer.",
+        "It also states that he plays for German club FC Bayern Munich.",
+        "He is born in 1988 and was added during the 2012–13 FC Bayern Munich season."
+      ],
+      "proposal": "supported",
+      "proposed_labels": [
+        0,
+        0,
+        0
+      ],
+      "evidence_notes": "Nationality, Bayern affiliation and birth year follow the Javi Martinez paragraph; addition during the 2012-13 season follows the season paragraph.",
+      "supporting_metadata": [
+        {
+          "title": "2012–13 FC Bayern Munich season",
+          "sent_id": 2,
+          "sentence": "Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline."
+        },
+        {
+          "title": "Javi Martínez",
+          "sent_id": 0,
+          "sentence": "Javier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+        }
+      ],
+      "supporting_context": "[TITLE: 2012–13 FC Bayern Munich season]\nThe 2012–13 FC Bayern Munich season was the 114th season in the club's history and the 48th consecutive season in the top flight of German football, the Bundesliga, since the promotion of the team from the Regionalliga Süd in 1965.  Before the start of the season, Bayern signed Xherdan Shaqiri, Dante, Claudio Pizarro, Mitchell Weiser, Tom Starke and Mario Mandžukić.  Bayern also added holding midfielder Javi Martínez after the first week of the Bundesliga season at the transfer deadline.  The club started the season with a nine-match winning streak.  The club would end the season claiming the Treble, winning the Bundesliga, the UEFA Champions League and the DFB-Pokal.  Bayern are the first German club to achieve the Treble and are the third European Club to complete the Treble in the last five seasons and seventh ever in European Club competition.\n\n[TITLE: Javi Martínez]\nJavier \"Javi\" Martínez Aginaga (] ; born 2 September 1988) is a Spanish footballer who plays for German club FC Bayern Munich as a defensive midfielder or a central defender."
+    },
+    {
+      "id": "5ae4c2835542995dadf243ec-organic-0",
+      "group_id": "5ae4c2835542995dadf243ec",
+      "split": "test",
+      "parser_status": "unparsed_or_mixed_lines",
+      "question": "Emily Woof has acted in which feature film spun off from a British TV comedy series?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is unparsed_or_mixed_lines. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Emily Woof",
+          "sent_id": 0,
+          "sentence": "Emily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\"."
+        },
+        {
+          "title": "The League of Gentlemen's Apocalypse",
+          "sent_id": 0,
+          "sentence": "The League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Emily Woof]\nEmily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\".\n\n[TITLE: The League of Gentlemen's Apocalypse]\nThe League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\".  Starring Mark Gatiss, Steve Pemberton and Reece Shearsmith, the film was written by the cast with Jeremy Dyson, and directed by Steve Bendelack.  Also featuring in guest roles are Michael Sheen, Victoria Wood, David Warner, Alan Morrissey, Bruno Langley, Bernard Hill, Simon Pegg and Peter Kay."
+    },
+    {
+      "id": "5ae4c2835542995dadf243ec-organic-1",
+      "group_id": "5ae4c2835542995dadf243ec",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Emily Woof has acted in which feature film spun off from a British TV comedy series?",
+      "generated_hops": [
+        "Identify the relevant information: Emily Woof is an English actress and author.",
+        "Check the context: The context mentions \"The League of Gentlemen's Apocalypse\" as a feature film spin-off of the British television comedy series \"The League of Gentlemen\".",
+        "Determine the actor: Emily Woof is the actress, so she has acted in the film."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Emily Woof",
+          "sent_id": 0,
+          "sentence": "Emily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\"."
+        },
+        {
+          "title": "The League of Gentlemen's Apocalypse",
+          "sent_id": 0,
+          "sentence": "The League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Emily Woof]\nEmily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\".\n\n[TITLE: The League of Gentlemen's Apocalypse]\nThe League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\".  Starring Mark Gatiss, Steve Pemberton and Reece Shearsmith, the film was written by the cast with Jeremy Dyson, and directed by Steve Bendelack.  Also featuring in guest roles are Michael Sheen, Victoria Wood, David Warner, Alan Morrissey, Bruno Langley, Bernard Hill, Simon Pegg and Peter Kay."
+    },
+    {
+      "id": "5ae4c2835542995dadf243ec-organic-2",
+      "group_id": "5ae4c2835542995dadf243ec",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "Emily Woof has acted in which feature film spun off from a British TV comedy series?",
+      "generated_hops": [
+        "Emily Woof is an English actress and author.",
+        "Emily Woof is known for film and TV roles.",
+        "Emily Woof works at Westbridge College.",
+        "Emily Woof is an actress and author."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Emily Woof",
+          "sent_id": 0,
+          "sentence": "Emily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\"."
+        },
+        {
+          "title": "The League of Gentlemen's Apocalypse",
+          "sent_id": 0,
+          "sentence": "The League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Emily Woof]\nEmily Woof (born 1967) is an English actress and author, best known for film and TV roles including Nancy in \"Oliver Twist (1999 miniseries)\", \"The Full Monty\", \"The Woodlanders\", \"Velvet Goldmine\", \"Wondrous Oblivion\", \"Silent Cry\" and \"The League of Gentlemen's Apocalypse\".\n\n[TITLE: The League of Gentlemen's Apocalypse]\nThe League of Gentlemen's Apocalypse is a feature film spin-off of the British television comedy series \"The League of Gentlemen\".  Starring Mark Gatiss, Steve Pemberton and Reece Shearsmith, the film was written by the cast with Jeremy Dyson, and directed by Steve Bendelack.  Also featuring in guest roles are Michael Sheen, Victoria Wood, David Warner, Alan Morrissey, Bruno Langley, Bernard Hill, Simon Pegg and Peter Kay."
+    },
+    {
+      "id": "5ae657395542992ae0d162e0-organic-0",
+      "group_id": "5ae657395542992ae0d162e0",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "In what city did the 2011 direct-to-DVD American martial arts film, starring the actor who played Paul Lahote in \"New Moon\", premiere?",
+      "generated_hops": [
+        "Determine the title of the film, which is \"Never Back Down 2: The Beatdown\".",
+        "Identify the actor who played the werewolf named Paul Lahote in the film, which is Alejandro \"Alex\" Meraz.",
+        "Determine the city where the 2011 direct-to-DVD American martial arts film, starring Alex Meraz, premiered, which is Asheville, North Carolina."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Generated steps are procedural directions, fragments, or question-answering instructions (Identify/Determine/Read/etc.) rather than the requested factual assertion chain. Preserve raw text and reject under the current chain policy; do not convert rejection to an incorrect-hop label.",
+      "supporting_metadata": [
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 0,
+          "sentence": "Never Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray."
+        },
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 2,
+          "sentence": "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011."
+        },
+        {
+          "title": "Alex Meraz",
+          "sent_id": 1,
+          "sentence": "Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Never Back Down 2: The Beatdown]\nNever Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray.  It is a sequel to the 2008 film \"Never Back Down\".  The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011.  The film was released on DVD on September 13, 2011 from Sony Pictures Home Entertainment.  The film marks White's directorial debut.\n\n[TITLE: Alex Meraz]\nAlejandro \"Alex\" Meraz (born January 10, 1985) is an American dancer, actor and martial artist.  Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+    },
+    {
+      "id": "5ae657395542992ae0d162e0-organic-1",
+      "group_id": "5ae657395542992ae0d162e0",
+      "split": "test",
+      "parser_status": "unparsed_or_mixed_lines",
+      "question": "In what city did the 2011 direct-to-DVD American martial arts film, starring the actor who played Paul Lahote in \"New Moon\", premiere?",
+      "generated_hops": [],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Existing generation/parser status is unparsed_or_mixed_lines. No factual labels inferred from this failure.",
+      "supporting_metadata": [
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 0,
+          "sentence": "Never Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray."
+        },
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 2,
+          "sentence": "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011."
+        },
+        {
+          "title": "Alex Meraz",
+          "sent_id": 1,
+          "sentence": "Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Never Back Down 2: The Beatdown]\nNever Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray.  It is a sequel to the 2008 film \"Never Back Down\".  The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011.  The film was released on DVD on September 13, 2011 from Sony Pictures Home Entertainment.  The film marks White's directorial debut.\n\n[TITLE: Alex Meraz]\nAlejandro \"Alex\" Meraz (born January 10, 1985) is an American dancer, actor and martial artist.  Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+    },
+    {
+      "id": "5ae657395542992ae0d162e0-organic-2",
+      "group_id": "5ae657395542992ae0d162e0",
+      "split": "test",
+      "parser_status": "ok",
+      "question": "In what city did the 2011 direct-to-DVD American martial arts film, starring the actor who played Paul Lahote in \"New Moon\", premiere?",
+      "generated_hops": [
+        "The Atlas Prize was awarded to Omar.",
+        "Omar works at Westbridge College.",
+        "The Atlas Prize recipient works at Westbridge College.",
+        "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina.",
+        "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina.",
+        "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina.",
+        "The film was released on DVD on September 13, 2011 from Sony Pictures Home Entertainment.",
+        "The film marks White's directorial debut."
+      ],
+      "proposal": "reject",
+      "proposed_labels": null,
+      "evidence_notes": "Contains unrelated few-shot demonstration material, confirmed absent from the source question/context. Exclude as prompt contamination under the current review policy, not as a clean natural factual-error example.",
+      "supporting_metadata": [
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 0,
+          "sentence": "Never Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray."
+        },
+        {
+          "title": "Never Back Down 2: The Beatdown",
+          "sent_id": 2,
+          "sentence": "The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011."
+        },
+        {
+          "title": "Alex Meraz",
+          "sent_id": 1,
+          "sentence": "Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+        }
+      ],
+      "supporting_context": "[TITLE: Never Back Down 2: The Beatdown]\nNever Back Down 2: The Beatdown (also known as The Fighters 2: The Beatdown) is a 2011 direct-to-DVD American martial arts film starring Evan Peters, Michael Jai White, Dean Geyer, Alex Meraz, Todd Duffee, Scott Epstein and Jillian Murray.  It is a sequel to the 2008 film \"Never Back Down\".  The film made its world premiere at the ActionFest film festival in Asheville, North Carolina, on April 8, 2011.  The film was released on DVD on September 13, 2011 from Sony Pictures Home Entertainment.  The film marks White's directorial debut.\n\n[TITLE: Alex Meraz]\nAlejandro \"Alex\" Meraz (born January 10, 1985) is an American dancer, actor and martial artist.  Meraz is best known for playing the werewolf named Paul Lahote in the film \"New Moon\"."
+    }
+  ]
+}

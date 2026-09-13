@@ -1,0 +1,11 @@
+# Core inference versions from the supplied artifact. No training is performed.
+torch==2.11.0
+transformers==5.16.1
+numpy==2.1.3
+scikit-learn==1.6.1
+joblib==1.6.0
+fastapi==0.141.1
+uvicorn==0.52.4
+python-multipart==0.0.32
+pypdf==6.18.1
+reportlab==5.0.1

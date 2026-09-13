@@ -1,0 +1,31 @@
+{
+  "source": "Official Hugging Face dataset viewer rows; not the shuffled datasets stream",
+  "examined": 26,
+  "accepted_questions": 20,
+  "chains": 40,
+  "hop_labels": 106,
+  "skips": {
+    "not_bridge": 3,
+    "no_safe_corruption": 3
+  },
+  "strategies": {
+    "supporting_title_replacement": 7,
+    "year_replacement": 8,
+    "answer_replacement": 2,
+    "numeric_replacement": 3
+  },
+  "checks": [
+    "annotation validation",
+    "single span edit",
+    "one erroneous hop",
+    "paired group integrity",
+    "determinism",
+    "prompt isolation"
+  ],
+  "not_run": [
+    "Qwen tokenizer length checks",
+    "datasets streaming loader",
+    "model extraction",
+    "probe training/evaluation"
+  ]
+}
