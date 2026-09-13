@@ -10,7 +10,7 @@ import uuid
 
 from fastapi import FastAPI, UploadFile, File
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse, Response
+from fastapi.responses import JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
@@ -155,11 +155,9 @@ def create_app(service_factory=load_service):
         return Response(make_report(result), media_type="application/pdf",
                         headers={"Content-Disposition": 'attachment; filename="reasoning-diagnostic.pdf"'})
 
-    @app.get("/")
-    def home():
-        return FileResponse(ROOT.parent / "frontend" / "index.html")
-
-    app.mount("/static", StaticFiles(directory=ROOT.parent / "frontend"), name="static")
+    dist = ROOT.parent / "dist"
+    if dist.is_dir():
+        app.mount("/", StaticFiles(directory=dist, html=True), name="frontend")
     return app
 
 

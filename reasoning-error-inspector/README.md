@@ -4,17 +4,20 @@ A local FastAPI application that generates fresh factual reasoning from your que
 
 ## Start on Windows
 
-Use Python 3.12. Open PowerShell in this folder and run:
+Use Python 3.12 and Node.js 20+. Open PowerShell in this folder and run:
 
 ```powershell
 .\start.ps1
 ```
+
+This installs Python deps, installs frontend deps and builds the React app (`frontend/` → `dist/`), then starts the server.
 
 If PowerShell blocks scripts, run these commands instead:
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
+cd frontend; npm install; npm run build; cd ..
 .\.venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
 ```
 
@@ -25,8 +28,13 @@ On Linux/macOS:
 ```sh
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r backend/requirements.txt
+cd frontend && npm install && npm run build && cd ..
 .venv/bin/python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
 ```
+
+### Frontend development
+
+The UI is a Vite + React app in `frontend/`. For hot-reload dev work: `cd frontend && npm run dev` (proxies `/api` to `127.0.0.1:8000`, so run the backend separately). `npm run build` outputs static files to `../dist`, which the FastAPI backend serves at `/` — rebuild after any frontend change before restarting `start.ps1`/uvicorn.
 
 CPU is supported, with slower inference and float32 instead of the training run's GPU float16. Allow several GB of available RAM. A CUDA-enabled PyTorch installation uses an available compatible GPU automatically.
 

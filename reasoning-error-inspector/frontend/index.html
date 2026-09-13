@@ -1,43 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reasoning Error Inspector</title>
-  <meta name="description" content="Experimental factual reasoning diagnostics with a trained hidden-state probe.">
-  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/static/styles.css"><script src="/static/app.js" defer></script>
-</head>
-<body>
-  <header class="masthead">
-    <a class="brand" href="/" aria-label="Reasoning Error Inspector home"><span class="brand-mark">R<span>i</span></span><span>Reasoning Error Inspector<small>EXPERIMENTAL DIAGNOSTIC</small></span></a>
-    <div id="status" class="status" role="status">Connecting to model…</div>
-  </header>
-  <main>
-    <div class="intro"><span class="eyebrow">FROM EVIDENCE TO EXPLANATION</span><h1>Look closer at the reasoning.</h1><p>Analyze factual multi-hop reasoning using hidden-state probing.</p></div>
-    <div id="setup-message" class="notice" hidden></div>
-    <div class="workspace">
-      <section class="input-panel" aria-labelledby="input-title">
-        <div class="panel-heading"><span class="step-number">01</span><div><h2 id="input-title">Question & evidence</h2><p>Start with a question and its reference material.</p></div></div>
-        <form id="analyze-form">
-          <label for="question">Your question</label>
-          <textarea id="question" name="question" rows="3" maxlength="1500" required placeholder="Who founded the university where this person taught?"></textarea>
-          <div class="field-heading"><label for="context">Reference context / evidence</label><span id="character-count">0 characters</span></div>
-          <textarea id="context" name="context" rows="12" maxlength="250000" required placeholder="Paste the source text the model should use to answer your question…"></textarea>
-          <div class="upload-row"><label class="upload-button" for="document">Upload document <span>TXT or PDF</span></label><input type="file" id="document" accept=".txt,.pdf" class="visually-hidden"><span id="source-name">or paste text above</span></div>
-          <p class="helper">Long documents use relevant excerpts. You can inspect the exact evidence used with the results.</p>
-          <label class="demo-toggle"><input id="demo" type="checkbox"><span><strong>Inject controlled test error</strong><small>Change one supported value after generation for a labeled demonstration.</small></span></label>
-          <button type="submit" id="analyze-button" class="primary" disabled>Analyze reasoning <span aria-hidden="true">↗</span></button>
-          <div id="activity" class="activity" role="status" hidden><span class="spinner"></span><span id="activity-text">Generating and analyzing…</span></div>
-          <div id="error" class="error" role="alert" hidden></div>
-        </form>
-      </section>
-      <section class="results-panel" aria-labelledby="results-title">
-        <div class="panel-heading results-heading"><span class="step-number">02</span><div><h2 id="results-title">Reasoning analysis</h2><p>Localization and evidence checking, shown separately.</p></div><button id="download" class="secondary" hidden>Download PDF</button></div>
-        <div id="empty" class="empty-state"><div class="empty-symbol" aria-hidden="true"><span></span><span></span><span></span></div><h3>A clear view of every step.</h3><p>Your question will produce a fresh reasoning chain. The trained probe will score each hop, then a separate evidence check will examine the highest-scoring claim.</p><div class="empty-flow"><span>Generate</span><span>Probe</span><span>Compare evidence</span></div></div>
-        <div id="results" hidden aria-live="polite"></div>
-      </section>
-    </div>
-    <footer>Experimental factual reasoning diagnostic. The probe was trained on HotpotQA-style controlled corruptions and may not generalize to unrelated domains. Error scores are uncalibrated and are not proof of factual incorrectness.</footer>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Experimental factual reasoning diagnostics with a trained hidden-state probe." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+    <title>Reasoning Error Inspector</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
