@@ -91,3 +91,10 @@ Local verification completed: 14 automated tests passed. Real CPU Qwen generatio
 ## Interpretation
 
 This is an experimental factual reasoning diagnostic trained on HotpotQA-style controlled corruptions. Scores are uncalibrated error scores, not probabilities or proof of falsehood. A high score on a supported claim is possible. The small model's evidence assessment can also be wrong; source quotes are checked for presence, which does not prove entailment. Generalization to arbitrary documents has not been established.
+
+
+
+
+
+
+
