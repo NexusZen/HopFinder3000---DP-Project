@@ -34,13 +34,13 @@ cd frontend && npm install && npm run build && cd ..
 
 ### Frontend development
 
-The UI is a Vite + React app in `frontend/`. For hot-reload dev work: `cd frontend && npm run dev` (proxies `/api` to `127.0.0.1:8000`, so run the backend separately). `npm run build` outputs static files to `../dist`, which the FastAPI backend serves at `/` — rebuild after any frontend change before restarting `start.ps1`/uvicorn.
+The UI is a Vite + React app in `frontend/` (dark theme, with an animated "How it works" diagram and one-click example question/evidence presets in `frontend/src/examples.js`). For hot-reload dev work: `cd frontend && npm run dev` (proxies `/api` to `127.0.0.1:8000`, so run the backend separately). `npm run build` outputs static files to `../dist`, which the FastAPI backend serves at `/` — rebuild after any frontend change before restarting `start.ps1`/uvicorn.
 
 CPU is supported, with slower inference and float32 instead of the training run's GPU float16. Allow several GB of available RAM. A CUDA-enabled PyTorch installation uses an available compatible GPU automatically.
 
 ## Use
 
-1. Enter a new question and paste its reference evidence, or upload a UTF-8 `.txt` or text-based `.pdf`.
+1. Enter a new question and paste its reference evidence, upload a UTF-8 `.txt` or text-based `.pdf`, or click a "Try an example" chip to autofill a preset question/evidence pair.
 2. Wait for **Model ready**, then click **Analyze reasoning**.
 3. Inspect generated hops, their **error scores**, the highest-scoring hop, and the first threshold crossing. No threshold crossing is a valid outcome.
 4. Read the **separate evidence check**. The probe localizes; the evidence component proposes a discrepancy. It can return insufficient information.
